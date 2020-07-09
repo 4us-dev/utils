@@ -1,6 +1,7 @@
 {
-  "name": "@4u.dev/4us-utils",
-  "version": "0.0.1",
+  "name": "@4us.dev/4us-utils",
+  "version": "1.0.1",
+  "private": false,
   "description": "Utility classes to assist developers during software development",
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
