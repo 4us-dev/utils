@@ -1,1 +1,1 @@
-export * from './utils/StringUtils';
+export { default as StringUtils } from './utils/StringUtils';

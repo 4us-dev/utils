@@ -1,16 +1,18 @@
 {
-  "name": "4us-utils",
+  "name": "@4u.dev/4us-utils",
   "version": "0.0.1",
   "description": "Utility classes to assist developers during software development",
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/4us-dev/4us-utils#readme",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && tsc",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.6.0",
