@@ -5,7 +5,7 @@
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/4us-dev/4us-utils#readme",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rimraf ./lib && tsc",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",

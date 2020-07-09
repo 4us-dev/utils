@@ -26,10 +26,35 @@
         "signature": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
         "affectsGlobalScope": true
       },
+      "./src/utils/StringUtils.ts": {
+        "version": "f85ddaadea1d3fd3bfd18e24cf14149b0bf6fe2ed41a3e774b2b6685812d875a",
+        "signature": "2ad5696bfa676b6233bd3a54472c4b5ad9532623d4ac562739c034b2c49cd03f",
+        "affectsGlobalScope": false
+      },
       "./src/index.ts": {
-        "version": "3a3eb91aa82f678d460994f9387c868ff782ea4058751c49b85c36c067ed1425",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "affectsGlobalScope": true
+        "version": "b8cb86905a0b81c0f0bea953401354485fcd71511c91a3955ce2730a4b705d56",
+        "signature": "b8cb86905a0b81c0f0bea953401354485fcd71511c91a3955ce2730a4b705d56",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/color-name/index.d.ts": {
+        "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
+        "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/eslint-visitor-keys/index.d.ts": {
+        "version": "725d9be2fd48440256f4deb00649adffdbc5ecd282b09e89d4e200663792c34c",
+        "signature": "725d9be2fd48440256f4deb00649adffdbc5ecd282b09e89d4e200663792c34c",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/json-schema/index.d.ts": {
+        "version": "ecdf947a5111318568ba99f2a87b8498382d8871207f1bc6271ff3b9536a2448",
+        "signature": "ecdf947a5111318568ba99f2a87b8498382d8871207f1bc6271ff3b9536a2448",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/parse-json/index.d.ts": {
+        "version": "2b8264b2fefd7367e0f20e2c04eed5d3038831fe00f5efbc110ff0131aab899b",
+        "signature": "2b8264b2fefd7367e0f20e2c04eed5d3038831fe00f5efbc110ff0131aab899b",
+        "affectsGlobalScope": false
       }
     },
     "options": {
@@ -46,7 +71,11 @@
       "forceConsistentCasingInFileNames": true,
       "configFilePath": "./tsconfig.json"
     },
-    "referencedMap": {},
+    "referencedMap": {
+      "./src/index.ts": [
+        "./src/utils/StringUtils.ts"
+      ]
+    },
     "exportedModulesMap": {
       "./node_modules/typescript/lib/lib.es5.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
@@ -55,15 +84,23 @@
         "./node_modules/@types/node/ts3.2/process.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts"
+      ],
+      "./src/index.ts": [
+        "./src/utils/StringUtils.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "./node_modules/@types/color-name/index.d.ts",
+      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
+      "./node_modules/@types/json-schema/index.d.ts",
+      "./node_modules/@types/parse-json/index.d.ts",
       "./node_modules/typescript/lib/lib.d.ts",
       "./node_modules/typescript/lib/lib.dom.d.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.scripthost.d.ts",
       "./node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "./src/index.ts"
+      "./src/index.ts",
+      "./src/utils/StringUtils.ts"
     ]
   },
   "version": "3.9.6"
