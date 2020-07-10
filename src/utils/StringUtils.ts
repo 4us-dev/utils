@@ -10,6 +10,10 @@ class StringUtils {
   isEmpty(value?: string | null): boolean {
     return !value || value.length === 0;
   }
+
+  isNotEmpty(value?: string | null): boolean {
+    return !this.isEmpty(value);
+  }
 }
 
 export default StringUtils;

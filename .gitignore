@@ -1,4 +1,6 @@
 node_modules
 lib/
 *.log
-tsconfig.tsbuildinfo
+.scannerwork
+coverage
+.vscode
