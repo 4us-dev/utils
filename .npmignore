@@ -3,3 +3,6 @@ src
 .prettierrc
 tsconfig.json
 .eslintrc.js
+jest.config.js
+sonar-project.properties
+tsconfig.tsbuildinfo
