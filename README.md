@@ -7,7 +7,7 @@ const stringUtils = new StringUtils();
 stringUtils;
 ```
 
-#### isBlank
+#### isBlank and isNotBlank
 
 ```js
 stringUtils.isBlank(null); // true
