@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .ts",
     "test": "jest --watchAll=false",
     "coverage": "jest --coverage --coverageReporters=lcov --watchAll=false",
-    "prepare": "npm run build"
+    "prepare": "npm run build && npm test"
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
