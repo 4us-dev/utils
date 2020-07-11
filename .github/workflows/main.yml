@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: Cache node_modules and coverage
         uses: actions/cache@v2
         with:
@@ -31,6 +33,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: Cache node_modules and coverage
         uses: actions/cache@v2
         with:
@@ -54,6 +58,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: Download Test Coverage
         uses: actions/download-artifact@master
         with:
@@ -62,7 +68,7 @@ jobs:
       - name: List
         run: ls -l
       - name: Publish to sonar
-        uses: sonarsource/sonarcloud-github-action@master
+        uses: sonarsource/sonarcloud-github-action@v1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
