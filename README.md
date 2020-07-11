@@ -24,11 +24,11 @@ npm i @4us-dev/utils
 
 ## Docs
 
-- [StringUtils](#stringUtils)
-  - [isBlank and isNotBlank](#isBlank-and-isNotBlank)
-  - [isEmpty and isNotEmpty](#isEmpty-and-isNotEmpty)
-- [RandomUtils](#randomUtils)
-  - [nextInt](#nextInt)
+- [StringUtils](#stringutils)
+  - [isBlank and isNotBlank](#isblank-and-isnotblank)
+  - [isEmpty and isNotEmpty](#isempty-and-isnotempty)
+- [RandomUtils](#randomutils)
+  - [nextInt](#nextint)
 
 ### StringUtils
 
