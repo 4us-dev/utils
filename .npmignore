@@ -6,3 +6,4 @@ tsconfig.json
 jest.config.js
 sonar-project.properties
 tsconfig.tsbuildinfo
+docs

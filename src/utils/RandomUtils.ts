@@ -5,14 +5,12 @@ export interface MinMaxNumberConfig {
 
 /**
  * Random value generator
+ * @class RandomUtils
  */
 export default class RandomUtils {
   /**
-   * Generates a random integer between the `min` and `max` inclusive
-   *
-   * @param {MinMaxNumberConfig} config - defaul values: `{ min: 0, max: 100 }`
-   * @return {number} random integer between min and max
-   *
+   * Generates a random integer between the `min` and `max` inclusive.
+   * @since v0.0.2
    * @author Clairton luz <clairton.luz@gmail.com>
    *
    * @example

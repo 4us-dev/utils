@@ -9,6 +9,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && tsc",
+    "docs": "typedoc --out docs --mode modules",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
     "test": "jest --watchAll=false",
@@ -28,6 +29,7 @@
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "ts-jest": "^26.1.1",
+    "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
   },
   "repository": {
