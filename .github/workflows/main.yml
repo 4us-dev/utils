@@ -64,8 +64,3 @@ jobs:
             ${{ runner.os }}-node-
       - name: verify coverage cache
       - run: ls -lsa
-      - name: Publish to sonar
-      - uses: warchant/setup-sonar-scanner@v1
-      - run: sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.organization=4us-dev -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.projectKey=utils
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
