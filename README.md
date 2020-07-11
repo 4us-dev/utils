@@ -22,19 +22,18 @@ Install with [npm](https://www.npmjs.com/)
 npm i @4us-dev/utils
 ```
 
-## Usage
-
-<!-- toc -->
+## Docs
 
 - [StringUtils](#stringUtils)
   - [isBlank and isNotBlank](#isBlank-and-isNotBlank)
   - [isEmpty and isNotEmpty](#isEmpty-and-isNotEmpty)
+- [RandomUtils](#randomUtils)
+  - [nextInt](#nextInt)
 
 ### StringUtils
 
 ```js
 const stringUtils = new StringUtils();
-stringUtils;
 ```
 
 #### isBlank and isNotBlank
@@ -68,3 +67,23 @@ stringUtils.isEmpty('a'); // false
 ```
 
 `stringUtils.isNotEmpty(value)` is equal to `!stringUtils.isEmpty(value)`
+
+### RandomUtils
+
+```js
+const randomUtils = new RandomUtils();
+```
+
+#### nextInt
+
+Generates a random integer between the `min` and `max` inclusive.
+
+Examples:
+
+```js
+// the return a integer between 0 and 100 inclusive
+const value = randomUtils.getRandomInteger();
+
+// the return can be one of this values 0, 1, 2 or 3
+const value = randomUtils.getRandomInteger({ min: 0, max: 3 });
+```
