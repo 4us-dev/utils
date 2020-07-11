@@ -1,10 +1,10 @@
 {
-  "name": "@4us.dev/4us-utils",
+  "name": "@4us.dev/utils",
   "version": "0.0.1",
   "description": "Utility classes to assist developers during software development",
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/4us-dev/4us-utils#readme",
+  "homepage": "https://github.com/4us-dev/utils#readme",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -32,10 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/4us-dev/4us-utils.git"
+    "url": "git+https://github.com/4us-dev/utils.git"
   },
   "bugs": {
-    "url": "https://github.com/4us-dev/4us-utils/issues"
+    "url": "https://github.com/4us-dev/utils/issues"
   },
   "keywords": [
     "utils",
