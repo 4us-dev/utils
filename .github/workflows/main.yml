@@ -65,8 +65,6 @@ jobs:
         with:
           name: coverage
           path: coverage
-      - name: List
-        run: ls -l
       - name: Publish to sonar
         uses: sonarsource/sonarcloud-github-action@v1.3
         env:
