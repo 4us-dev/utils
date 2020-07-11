@@ -1,4 +1,4 @@
-name: Sonar
+name: Build, Test Coveverage and Sonar
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Cache Node.js modules and coverage
+      - name: Cache node_modules and coverage
         uses: actions/cache@v2
         with:
           path: |
@@ -26,26 +26,26 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-  # coverage:
-  #   name: Test Coverage
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Repo
-  #       uses: actions/checkout@master
-  #     - name: Cache Node.js modules and coverage
-  #       uses: actions/cache@v2
-  #       with:
-  #         path: |
-  #           ~/.npm
-  #           coverage
-  #         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-  #         restore-keys: |
-  #           ${{ runner.os }}-node-
-  #     - name: Install Dependencies
-  #       run: npm install
-  #     - name: Test Coverage
-  #       run: npm run coverage
+  coverage:
+    name: Test Coverage
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Cache node_modules and coverage
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            coverage
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Dependencies
+        run: npm install
+      - name: Test Coverage
+        run: npm run coverage
   # sonar:
   #   name: Publish test coverage to sonar
   #   needs: coverage
@@ -53,7 +53,7 @@ jobs:
   #   steps:
   #     - name: Checkout Repo
   #       uses: actions/checkout@master
-  #     - name: Cache Node.js modules and coverage
+  #     - name: Cache node_modules and coverage
   #       uses: actions/cache@v2
   #       with:
   #         path: |
