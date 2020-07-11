@@ -42,8 +42,27 @@ jobs:
         run: npm install
       - name: Test Coverage
         run: npm run coverage
+      - name: Archive Test Coverage
+        uses: actions/upload-artifact@master
+        with:
+          name: coverage
+          path: coverage
+  sonar:
+    name: Sonar
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Test Coverage
+        uses: actions/download-artifact@master
+        with:
+          name: coverage
+          path: coverage
+      - name: List
+        run: ls -l
       - name: Publish to sonar
-      - uses: warchant/setup-sonar-scanner@v1
-      - run: sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.organization=4us-dev -Dsonar.host.url=https://sonarcloud.io/ -Dsonar.projectKey=utils
+      - uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
