@@ -1,4 +1,4 @@
-name: Build, Test Coveverage and Sonar
+name: Build and Tests
 
 on:
   push:

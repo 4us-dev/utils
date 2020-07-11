@@ -14,6 +14,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=4us-dev_utils&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=4us-dev_utils)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=4us-dev_utils&metric=security_rating)](https://sonarcloud.io/dashboard?id=4us-dev_utils)
 
+![Build and Tests](https://github.com/4us-dev/utils/workflows/Build%20and%20Tests/badge.svg)
 [![npm-package](https://badge.fury.io/js/%404us-dev%2Futils.svg)](https://www.npmjs.com/package/@4us-dev/utils)
 [![issues](https://img.shields.io/github/issues/4us-dev/utils)](/issues)
 [![dependencies](https://img.shields.io/david/4us-dev/utils)](https://david-dm.org/4us-dev/utils)
