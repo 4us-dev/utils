@@ -61,8 +61,3 @@ jobs:
           path: coverage
       - name: List
         run: ls -l
-      - name: Publish to sonar
-      - uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
