@@ -1,11 +1,4 @@
-# 4us utils
-
-<div align="center">
-  <a href="https://4us.dev/">
-    <img src="https://raw.githubusercontent.com/4us-dev/utils/master/resources/logo-4us-dev.png" alt="4us dev logo" width="200">
-  </a>
-  <br/>  
-</div>
+# 4us-dev utils
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=4us-dev_utils&metric=alert_status)](https://sonarcloud.io/dashboard?id=4us-dev_utils)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=4us-dev_utils&metric=coverage)](https://sonarcloud.io/dashboard?id=4us-dev_utils)
