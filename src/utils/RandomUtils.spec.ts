@@ -111,7 +111,7 @@ describe('nextString', () => {
     expect(actual).not.toBeNull();
     expect(actual).not.toBeUndefined();
     expect(actual).toHaveLength(30);
-    expect(/^[!#\$%&\*_\+=\-\^~?;:.,|]+$/.test(actual)).toBeTruthy();
+    expect(/^[!#$%&*_+=\-^~?;:.,|]+$/.test(actual)).toBeTruthy();
   });
 
   it('should generate random with length 30 using only special caracters ambiguous', () => {
