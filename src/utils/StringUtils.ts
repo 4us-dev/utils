@@ -1,5 +1,6 @@
 /**
- * @class StringUtils
+ * @since v0.0.1
+ * @author Clairton luz <clairton.luz@gmail.com>
  */
 class StringUtils {
   /**

@@ -24,17 +24,23 @@ npm i @4us-dev/utils
 
 ## Docs
 
+[Full Documentation](https://utils.4us.dev/)
+
+## Usage
+
 - [StringUtils](#stringutils)
   - [isBlank and isNotBlank](#isblank-and-isnotblank)
   - [isEmpty and isNotEmpty](#isempty-and-isnotempty)
 - [RandomUtils](#randomutils)
   - [nextInt](#nextint)
+  - [nextString](#nextstring)
+  - [nextStringCustom](#nextstringcustom)
+
+### Introduction
+
+`@4us-dev/utils` is a lib with utility methods to help developers during software development. It is developed with best practices in mind and to facilitate unit testing of your code. So, it does not have any static method, thus facilitating the practice of mocks during tests when necessary.
 
 ### StringUtils
-
-```js
-const stringUtils = new StringUtils();
-```
 
 #### isBlank and isNotBlank
 
@@ -43,14 +49,14 @@ isBlank return true if value is null, undefined, empty or string with only white
 Examples:
 
 ```js
-stringUtils.isBlank(null); // true
-stringUtils.isBlank(undefined); // true
-stringUtils.isBlank(''); // true
-stringUtils.isBlank('  '); // true
-stringUtils.isBlank('a'); // false
+new StringUtils().isBlank(null); // true
+new StringUtils().isBlank(undefined); // true
+new StringUtils().isBlank(''); // true
+new StringUtils().isBlank('  '); // true
+new StringUtils().isBlank('a'); // false
 ```
 
-`stringUtils.isNotBlank(value)` is equal to `!stringUtils.isBlank(value)`
+`new StringUtils().isNotBlank(value)` is equal to `!new StringUtils().isBlank(value)`
 
 #### isEmpty and isNotEmpty
 
@@ -59,20 +65,16 @@ isEmpty return true if value is null, undefined, or empty.
 Examples:
 
 ```js
-stringUtils.isEmpty(null); // true
-stringUtils.isEmpty(undefined); // true
-stringUtils.isEmpty(''); // true
-stringUtils.isEmpty('  '); // false
-stringUtils.isEmpty('a'); // false
+new StringUtils().isEmpty(null); // true
+new StringUtils().isEmpty(undefined); // true
+new StringUtils().isEmpty(''); // true
+new StringUtils().isEmpty('  '); // false
+new StringUtils().isEmpty('a'); // false
 ```
 
-`stringUtils.isNotEmpty(value)` is equal to `!stringUtils.isEmpty(value)`
+`new StringUtils().isNotEmpty(value)` is equal to `!new StringUtils().isEmpty(value)`
 
 ### RandomUtils
-
-```js
-const randomUtils = new RandomUtils();
-```
 
 #### nextInt
 
@@ -82,8 +84,43 @@ Examples:
 
 ```js
 // the return a integer between 0 and 100 inclusive
-const value = randomUtils.getRandomInteger();
+const value = new RandomUtils().getRandomInteger();
 
 // the return can be one of this values 0, 1, 2 or 3
-const value = randomUtils.getRandomInteger({ min: 0, max: 3 });
+const value = new RandomUtils().getRandomInteger({ min: 0, max: 3 });
+```
+
+#### nextString
+
+Generates a random string.
+
+Examples:
+
+```js
+// returns a random string with length 16
+const value = new RandomUtils().nextString();
+
+// returns a random string with length 8
+const value = new RandomUtils().nextString({ length: 8 });
+
+// returns a random string with length 8 only with letters upper, letters lower and numbers
+const value = new RandomUtils().nextString({
+  length: 8, // default 16
+  upper: true, // default true ex: ABCDEF...
+  lower: true, // default true ex: abcdef...
+  numbers: true, // default true ex: 012345...
+  specialSimple: false, // default true ex: !#$%&*_+=-^~?;:.,|
+  specialAmbiguous: false, // default true ex: "()\'`´{[]}/><
+});
+```
+
+#### nextStringCustom
+
+Generates a random string with `length` informed and using `caracteresAllowed` variable as reference.
+
+Examples:
+
+```js
+// returns a random string with length 10 using only `A`, `1` or `c` to generate the result
+const value = new RandomUtils().nextStringCustom(10, 'A1c');
 ```
