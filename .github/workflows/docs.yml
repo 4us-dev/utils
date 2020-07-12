@@ -33,16 +33,21 @@ jobs:
           path: docs
 
   deploy:
-    name: Deploy docs
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - name: Download docs
         uses: actions/download-artifact@master
         with:
           name: docs
           path: docs
-      - name: Cache node_modules
+      - name: Deploy docs to gh-pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
