@@ -1,6 +1,6 @@
 {
   "name": "@4us-dev/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Utility classes to assist developers during software development",
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
@@ -40,16 +40,22 @@
     "url": "https://github.com/4us-dev/utils/issues"
   },
   "keywords": [
+    "util",
     "utils",
+    "utility",
+    "helper",
     "tools",
     "string",
     "number",
-    "crypto",
+    "format",
+    "formater",
     "4us",
     "dev",
     "developer",
-    "utility",
+    "developers",
+    "browser",
     "node",
+    "typescript",
     "javascript"
   ],
   "husky": {
