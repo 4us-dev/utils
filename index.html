@@ -83,44 +83,95 @@
 				<a href="/LICENSE"><img src="https://img.shields.io/npm/l/@angular/cli.svg" alt="license"></a></p>
 				<p>Install with <a href="https://www.npmjs.com/">npm</a></p>
 				<pre><code class="language-sh">npm i @4us-dev/utils</code></pre>
+				<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
+					<h2>Docs</h2>
+				</a>
+				<p><a href="https://utils.4us.dev/">Full Documentation</a></p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<!-- toc -->
 				<ul>
-					<li><a href="#stringUtils">StringUtils</a><ul>
-							<li><a href="#isBlank-and-isNotBlank">isBlank and isNotBlank</a></li>
-							<li><a href="#isEmpty-and-isNotEmpty">isEmpty and isNotEmpty</a></li>
+					<li><a href="#stringutils">StringUtils</a><ul>
+							<li><a href="#isblank-and-isnotblank">isBlank and isNotBlank</a></li>
+							<li><a href="#isempty-and-isnotempty">isEmpty and isNotEmpty</a></li>
+						</ul>
+					</li>
+					<li><a href="#randomutils">RandomUtils</a><ul>
+							<li><a href="#nextint">nextInt</a></li>
+							<li><a href="#nextstring">nextString</a></li>
+							<li><a href="#nextstringcustom">nextStringCustom</a></li>
 						</ul>
 					</li>
 				</ul>
+				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
+					<h3>Introduction</h3>
+				</a>
+				<p><code>@4us-dev/utils</code> is a lib with utility methods to help developers during software development. It is developed with best practices in mind and to facilitate unit testing of your code. So, it does not have any static method, thus facilitating the practice of mocks during tests when necessary.</p>
 				<a href="#stringutils" id="stringutils" style="color: inherit; text-decoration: none;">
 					<h3>StringUtils</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> stringUtils = <span class="hljs-keyword">new</span> StringUtils();
-stringUtils;</code></pre>
 				<a href="#isblank-and-isnotblank" id="isblank-and-isnotblank" style="color: inherit; text-decoration: none;">
 					<h4>isBlank and isNotBlank</h4>
 				</a>
 				<p>isBlank return true if value is null, undefined, empty or string with only white spaces.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js">stringUtils.isBlank(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
-stringUtils.isBlank(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
-stringUtils.isBlank(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
-stringUtils.isBlank(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// true</span>
-stringUtils.isBlank(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
-				<p><code>stringUtils.isNotBlank(value)</code> is equal to <code>!stringUtils.isBlank(value)</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<p><code>new StringUtils().isNotBlank(value)</code> is equal to <code>!new StringUtils().isBlank(value)</code></p>
 				<a href="#isempty-and-isnotempty" id="isempty-and-isnotempty" style="color: inherit; text-decoration: none;">
 					<h4>isEmpty and isNotEmpty</h4>
 				</a>
 				<p>isEmpty return true if value is null, undefined, or empty.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js">stringUtils.isEmpty(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
-stringUtils.isEmpty(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
-stringUtils.isEmpty(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
-stringUtils.isEmpty(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// false</span>
-stringUtils.isEmpty(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
-				<p><code>stringUtils.isNotEmpty(value)</code> is equal to <code>!stringUtils.isEmpty(value)</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<p><code>new StringUtils().isNotEmpty(value)</code> is equal to <code>!new StringUtils().isEmpty(value)</code></p>
+				<a href="#randomutils" id="randomutils" style="color: inherit; text-decoration: none;">
+					<h3>RandomUtils</h3>
+				</a>
+				<a href="#nextint" id="nextint" style="color: inherit; text-decoration: none;">
+					<h4>nextInt</h4>
+				</a>
+				<p>Generates a random integer between the <code>min</code> and <code>max</code> inclusive.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-comment">// the return a integer between 0 and 100 inclusive</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().getRandomInteger();
+
+<span class="hljs-comment">// the return can be one of this values 0, 1, 2 or 3</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().getRandomInteger({ <span class="hljs-attr">min</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">3</span> });</code></pre>
+				<a href="#nextstring" id="nextstring" style="color: inherit; text-decoration: none;">
+					<h4>nextString</h4>
+				</a>
+				<p>Generates a random string.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 16</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString();
+
+<span class="hljs-comment">// returns a random string with length 8</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString({ <span class="hljs-attr">length</span>: <span class="hljs-number">8</span> });
+
+<span class="hljs-comment">// returns a random string with length 8 only with letters upper, letters lower and numbers</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString({
+  <span class="hljs-attr">length</span>: <span class="hljs-number">8</span>, <span class="hljs-comment">// default 16</span>
+  <span class="hljs-attr">upper</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: ABCDEF...</span>
+  <span class="hljs-attr">lower</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: abcdef...</span>
+  <span class="hljs-attr">numbers</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: 012345...</span>
+  <span class="hljs-attr">specialSimple</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default true ex: !#$%&amp;*_+=-^~?;:.,|</span>
+  <span class="hljs-attr">specialAmbiguous</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default true ex: &quot;()\&#x27;`´{[]}/&gt;&lt;</span>
+});</code></pre>
+				<a href="#nextstringcustom" id="nextstringcustom" style="color: inherit; text-decoration: none;">
+					<h4>nextStringCustom</h4>
+				</a>
+				<p>Generates a random string with <code>length</code> informed and using <code>caracteresAllowed</code> variable as reference.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 10 using only `A`, `1` or `c` to generate the result</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextStringCustom(<span class="hljs-number">10</span>, <span class="hljs-string">&#x27;A1c&#x27;</span>);</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
