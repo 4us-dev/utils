@@ -58,6 +58,13 @@ describe('nextString', () => {
     expect(actual).toHaveLength(16);
   });
 
+  it('should generate random with length 16 by default when not informed into config', () => {
+    const actual = randomUtils.nextString({ specialAmbiguous: false });
+    expect(actual).not.toBeNull();
+    expect(actual).not.toBeUndefined();
+    expect(actual).toHaveLength(16);
+  });
+
   it('should generate random with length 30 using only upper case caracters', () => {
     const actual = randomUtils.nextString({
       length: 30,
