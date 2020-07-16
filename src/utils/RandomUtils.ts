@@ -84,7 +84,7 @@ export interface RandomStringConfig {
 /**
  * Random value generator
  * @since v0.0.2
- * @author Clairton luz <clairton.luz@gmail.com>
+ * @author Clairton luz <clairton.c.l@gmail.com>
  */
 export default class RandomUtils {
   private upperCaracteres = 'ABCDEFGHIKLMNOPQRSTVXYZ';
@@ -95,7 +95,7 @@ export default class RandomUtils {
   /**
    * Generates a random integer between the `min` and `max` inclusive.
    * @since v0.0.2
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * // the return a integer between 0 and 100 inclusive
@@ -118,7 +118,7 @@ export default class RandomUtils {
    * How the string is generated can be configured
    *
    * @since v0.0.3
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * const value = new RandomUtils().nextString() // returns a random string with length 16
@@ -165,7 +165,7 @@ export default class RandomUtils {
    * Generates a random string with `length` informed and using `caracteresAllowed` variable
    * as reference.
    * @since v0.0.3
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * const value = new RandomUtils().nextStringCustom(10, 'A1c') // returns a random string with length 10 using only `A`, `1` or `c` to generate the result

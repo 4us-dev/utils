@@ -1,6 +1,6 @@
 /**
  * @since v0.0.1
- * @author Clairton luz <clairton.luz@gmail.com>
+ * @author Clairton luz <clairton.c.l@gmail.com>
  */
 class StringUtils {
   /**
@@ -8,7 +8,7 @@ class StringUtils {
    * Checks if a string is `null`, `undefined`, `empty` or `whitespace`
    *
    * @since v0.0.1
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * new StringUtils().isBlank(null) // true
@@ -32,7 +32,7 @@ class StringUtils {
    * Checks if a string is not `null`, `undefined`, `empty` or `whitespace`
    *
    * @since v0.0.1
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * new StringUtils().isNotBlank(null) // false
@@ -56,7 +56,7 @@ class StringUtils {
    * Checks if a string is `null`, `undefined` or `empty`
    *
    * @since v0.0.1
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * new StringUtils().isEmpty(null) // true
@@ -80,7 +80,7 @@ class StringUtils {
    * Checks if a string is not `null`, `undefined` or `empty`
    *
    * @since v0.0.1
-   * @author Clairton luz <clairton.luz@gmail.com>
+   * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
    * new StringUtils().isNotEmpty(null) // false

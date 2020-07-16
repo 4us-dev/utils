@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/4us-dev/4us-utils/compare/v0.0.3...v0.0.4) (2020-07-16)
+
+### Features
+
+- MaskUtils
+  - hideEmail
+
 ## [0.0.3](https://github.com/4us-dev/4us-utils/compare/v0.0.2...v0.0.3) (2020-07-12)
 
 ### Features
