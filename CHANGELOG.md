@@ -4,6 +4,7 @@
 
 - MaskUtils
   - hideEmail
+  - removeNonNumeric
 
 ## [0.0.3](https://github.com/4us-dev/4us-utils/compare/v0.0.2...v0.0.3) (2020-07-12)
 

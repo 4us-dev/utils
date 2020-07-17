@@ -31,6 +31,7 @@ export interface ObfuscateMailConfig {
    */
   visibleEnd?: number;
 }
+
 /**
  * @since v0.0.4
  * @author Clairton luz <clairton.c.l@gmail.com>
@@ -92,33 +93,20 @@ export default class MaskUtils {
     return undefined;
   }
 
-  // removeNotNumbers(value?: string | null) {
-  //   if (!value) return '';
-  //   return value.replace(/\D/g, '');
-  // }
-
-  // formatCpf(cpf?: string | null) {
-  //   if (cpf === null || cpf === undefined) return null;
-  //   cpf = this.onlyNumbers(cpf);
-
-  //   if (cpf.length > 11) cpf = cpf.substring(0, 11);
-
-  //   if (cpf.length > 9) {
-  //     cpf = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(
-  //       6,
-  //       9
-  //     )}-${cpf.substring(9)}`;
-  //   } else if (cpf.length > 6) {
-  //     cpf = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6)}`;
-  //   } else if (cpf.length > 3) {
-  //     cpf = `${cpf.substring(0, 3)}.${cpf.substring(3)}`;
-  //   }
-
-  //   return cpf;
-  // }
-
-  // containsOnlyDigits(value?: string | null): boolean {
-  //   if (!value) return false;
-  //   return /^\d+$/.test(value);
-  // }
+  /**
+   * Removes all non-numeric caracteres from string.
+   *
+   * @param value - String to be processed
+   * @returns `string` without any non-numeric caracteres
+   *
+   * @since v0.0.4
+   * @author Clairton luz <clairton.c.l@gmail.com>
+   *
+   * @example
+   * new MaskUtils().removeNonNumeric('a1b2c3') // '123'
+   */
+  removeNonNumeric(value?: string | null): string {
+    if (!value) return '';
+    return value.replace(/\D/g, '');
+  }
 }

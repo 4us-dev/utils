@@ -33,6 +33,7 @@ npm i @4us-dev/utils
   - [nextStringCustom](#nextstringcustom)
 - [MaskUtils](#maskutils)
   - [hideEmail](#hideemail)
+  - [removeNonNumeric](#removenonnumeric)
 
 ### Introduction
 
@@ -155,4 +156,14 @@ new MaskUtils().hideEmail(`fulano.com`); // undefined
 new MaskUtils().hideEmail(``); // undefined
 new MaskUtils().hideEmail(``); // undefined
 new MaskUtils().hideEmail(null); // undefined
+```
+
+#### removeNonNumeric
+
+Removes all non-numeric caracteres from string.
+
+Examples:
+
+```js
+new MaskUtils().removeNonNumeric('a1b2c3'); // '123'
 ```
