@@ -4,6 +4,8 @@ import isEmpty from './isEmpty';
 import isNotEmpty from './isNotEmpty';
 import hideEmail from './hideEmail';
 import removeNonNumeric from './removeNonNumeric';
+import isInteger from './isInteger';
+import isDouble from './isDouble';
 
 /**
  * @since v0.0.1
@@ -141,4 +143,56 @@ export default class StringUtils {
    * new StringUtils().removeNonNumeric('a1b2c3') // '123'
    */
   removeNonNumeric = removeNonNumeric;
+
+  /**
+   * Returns true if the value contains only numeric values
+   *
+   * @param value - String to be processed
+   * @returns `boolean`
+   *
+   * @since v0.0.4
+   * @author Clairton luz <clairton.c.l@gmail.com>
+   *
+   * @example
+   * new StringUtils().isInteger('123') // true
+   *
+   * @example
+   * new StringUtils().isInteger('12.3') // false
+   *
+   * @example
+   * new StringUtils().isInteger('12,3') // false
+   *
+   * @example
+   * new StringUtils().isInteger('a1b2c3') // false
+   *
+   * @example
+   * new StringUtils().isInteger(' 123 ') // false
+   */
+  isInteger = isInteger;
+
+  /**
+   * Returns true if the value into string is a double
+   *
+   * @param value - String to be processed
+   * @returns `boolean`
+   *
+   * @since v0.0.4
+   * @author Clairton luz <clairton.c.l@gmail.com>
+   *
+   * @example
+   * new StringUtils().isDouble('123') // true
+   *
+   * @example
+   * new StringUtils().isDouble('12.3') // true
+   *
+   * @example
+   * new StringUtils().isDouble('12,3') // false
+   *
+   * @example
+   * new StringUtils().isDouble('a1b2c3') // false
+   *
+   * @example
+   * new StringUtils().isDouble(' 123 ') // false
+   */
+  isDouble = isDouble;
 }

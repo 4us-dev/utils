@@ -29,10 +29,14 @@ npm i @4us-dev/utils
   - [isEmpty and isNotEmpty](#isempty-and-isnotempty)
   - [hideEmail](#hideemail)
   - [removeNonNumeric](#removenonnumeric)
+  - [isInteger](#isinteger)
+  - [isDouble](#isdouble)
 - [RandomUtils](#randomutils)
   - [nextInt](#nextint)
   - [nextString](#nextstring)
   - [nextStringCustom](#nextstringcustom)
+- [FormatUtils](#formatutils)
+  - [formatCpf](#formatcpf)
 
 ### Introduction
 
@@ -114,6 +118,34 @@ Examples:
 new StringUtils().removeNonNumeric('a1b2c3'); // '123'
 ```
 
+#### isInteger
+
+Returns true if the value contains only numeric values
+
+Examples:
+
+```js
+new StringUtils().isInteger('123'); // true
+new StringUtils().isInteger('12.3'); // false
+new StringUtils().isInteger('12,3'); // false
+new StringUtils().isInteger('a1b2c3'); // false
+new StringUtils().isInteger(' 123 '); // false
+```
+
+#### isDouble
+
+Returns true if the value into string is a double
+
+Examples:
+
+```js
+new StringUtils().isDouble('123'); // true
+new StringUtils().isDouble('12.3'); // true
+new StringUtils().isDouble('12,3'); // false
+new StringUtils().isDouble('a1b2c3'); // false
+new StringUtils().isDouble(' 123 '); // false
+```
+
 ### RandomUtils
 
 #### nextInt
@@ -163,4 +195,28 @@ Examples:
 ```js
 // returns a random string with length 10 using only `A`, `1` or `c` to generate the result
 const value = new RandomUtils().nextStringCustom(10, 'A1c');
+```
+
+### FormatUtils
+
+#### formatCpf
+
+Removes all non-numeric values and apply the cpf mask.
+
+Examples:
+
+```js
+const value = new FormatUtils().formatCpf('66273306010'); // "662.733.060-10"
+```
+
+This should format the cpf partially like this
+
+```js
+const value = new FormatUtils().formatCpf('6627330'); // "662.733.0"
+```
+
+If the value contains non-numeric characters they will be removed in formatting
+
+```js
+const value = new FormatUtils().formatCpf('66A27B33C060D10'); // "662.733.060-10"
 ```
