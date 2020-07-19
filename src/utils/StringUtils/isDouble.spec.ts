@@ -25,7 +25,7 @@ describe('isDouble', () => {
   });
 
   it('should return true if value contains .(dot)', () => {
-    expect(isDouble('01234567.89')).toBeTruthy();
+    expect(isDouble('01234567.8932')).toBeTruthy();
   });
 
   it('should return false if value contains more than one .(dot)', () => {
