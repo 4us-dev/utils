@@ -27,13 +27,12 @@ npm i @4us-dev/utils
 - [StringUtils](#stringutils)
   - [isBlank and isNotBlank](#isblank-and-isnotblank)
   - [isEmpty and isNotEmpty](#isempty-and-isnotempty)
+  - [hideEmail](#hideemail)
+  - [removeNonNumeric](#removenonnumeric)
 - [RandomUtils](#randomutils)
   - [nextInt](#nextint)
   - [nextString](#nextstring)
   - [nextStringCustom](#nextstringcustom)
-- [MaskUtils](#maskutils)
-  - [hideEmail](#hideemail)
-  - [removeNonNumeric](#removenonnumeric)
 
 ### Introduction
 
@@ -72,6 +71,48 @@ new StringUtils().isEmpty('a'); // false
 ```
 
 `new StringUtils().isNotEmpty(value)` is equal to `!new StringUtils().isEmpty(value)`
+
+#### hideEmail
+
+Hides part of the email.
+You could hide the start and/or the end of email.
+
+Examples:
+
+Default configuration
+
+```js
+new StringUtils().hideEmail(`fulano@gmail.com`); // `f...@gmail.com`
+```
+
+How ofuscate the ends of the email too
+
+```js
+new StringUtils().hideEmail(`fulano@gmail.com`, {
+  hideStart: true, // default true
+  hideEnd: true, // default false
+}); // `f...@gma...`
+```
+
+If the `email` informed does not contains `@` or is `null` or `undefined`
+the return of the method will be `undefined`
+
+```js
+new StringUtils().hideEmail(`fulano.com`); // undefined
+new StringUtils().hideEmail(``); // undefined
+new StringUtils().hideEmail(``); // undefined
+new StringUtils().hideEmail(null); // undefined
+```
+
+#### removeNonNumeric
+
+Removes all non-numeric caracteres from string.
+
+Examples:
+
+```js
+new StringUtils().removeNonNumeric('a1b2c3'); // '123'
+```
 
 ### RandomUtils
 
@@ -122,48 +163,4 @@ Examples:
 ```js
 // returns a random string with length 10 using only `A`, `1` or `c` to generate the result
 const value = new RandomUtils().nextStringCustom(10, 'A1c');
-```
-
-### MaskUtils
-
-#### hideEmail
-
-Obfuscate part of the email.
-You could obfuscate the start and/or the end of email.
-
-Examples:
-
-Default configuration
-
-```js
-new MaskUtils().hideEmail(`fulano@gmail.com`); // `f...@gmail.com`
-```
-
-How ofuscate the ends of the email too
-
-```js
-new MaskUtils().hideEmail(`fulano@gmail.com`, {
-  hideStart: true, // default true
-  hideEnd: true, // default false
-}); // `f...@gma...`
-```
-
-If the `email` informed does not contains `@` or is `null` or `undefined`
-the return of the method will be `undefined`
-
-```js
-new MaskUtils().hideEmail(`fulano.com`); // undefined
-new MaskUtils().hideEmail(``); // undefined
-new MaskUtils().hideEmail(``); // undefined
-new MaskUtils().hideEmail(null); // undefined
-```
-
-#### removeNonNumeric
-
-Removes all non-numeric caracteres from string.
-
-Examples:
-
-```js
-new MaskUtils().removeNonNumeric('a1b2c3'); // '123'
 ```

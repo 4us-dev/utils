@@ -2,7 +2,7 @@
 
 ### Features
 
-- MaskUtils
+- StringUtils
   - hideEmail
   - removeNonNumeric
 
