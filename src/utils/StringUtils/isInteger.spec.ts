@@ -35,4 +35,12 @@ describe('isInteger', () => {
   it('should return true if value contains only numeric caracters', () => {
     expect(isInteger('0123456789')).toBeTruthy();
   });
+
+  it('should return true if value contains only numeric caracters very big', () => {
+    expect(
+      isInteger(
+        '9999999999999999999999999999999999999999999999999999999999999999999999'
+      )
+    ).toBeTruthy();
+  });
 });
