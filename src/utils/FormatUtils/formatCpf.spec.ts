@@ -60,4 +60,9 @@ describe('formatCpf', () => {
     const input = '6627330601';
     expect(formatCpf(input)).toBe('662.733.060-1');
   });
+
+  it('should truncate the value if it is greater than 11 then format the cpf', () => {
+    const input = '662733060101';
+    expect(formatCpf(input)).toBe('662.733.060-10');
+  });
 });

@@ -1,7 +1,8 @@
 import removeNonNumeric from '../StringUtils/removeNonNumeric';
+import isBlank from '../StringUtils/isBlank';
 
 export default (cpf?: string | null): string | undefined => {
-  if (cpf === null || cpf === undefined) return undefined;
+  if (isBlank(cpf)) return undefined;
   cpf = removeNonNumeric(cpf);
   if (cpf.length > 11) cpf = cpf.substring(0, 11);
   if (cpf.length > 9) {
