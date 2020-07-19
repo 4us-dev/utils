@@ -2,14 +2,14 @@ import formatCpf from './formatCpf';
 
 /**
  * FormatUtils
- * @since v0.0.4
+ * @since v0.0.5
  * @author Clairton luz <clairton.c.l@gmail.com>
  */
 export default class FormatUtils {
   /**
    * Removes all non-numeric values and apply the cpf mask.
    *
-   * @since v0.0.4
+   * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example

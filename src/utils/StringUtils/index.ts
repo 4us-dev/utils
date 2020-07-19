@@ -109,7 +109,7 @@ export default class StringUtils {
    * @param config - Setting how the email should be hided
    * @returns email hided
    *
-   * @since v0.0.4
+   * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
@@ -136,7 +136,7 @@ export default class StringUtils {
    * @param value - String to be processed
    * @returns `string` without any non-numeric caracteres
    *
-   * @since v0.0.4
+   * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
@@ -150,7 +150,7 @@ export default class StringUtils {
    * @param value - String to be processed
    * @returns `boolean`
    *
-   * @since v0.0.4
+   * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
@@ -176,7 +176,7 @@ export default class StringUtils {
    * @param value - String to be processed
    * @returns `boolean`
    *
-   * @since v0.0.4
+   * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example

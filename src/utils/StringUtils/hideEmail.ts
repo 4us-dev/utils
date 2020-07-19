@@ -27,7 +27,7 @@ export default (
 };
 
 /**
- * @since v0.0.4
+ * @since v0.0.5
  * @author Clairton luz <clairton.c.l@gmail.com>
  */
 export interface HideMailConfig {
