@@ -1,6 +1,22 @@
 import formatCpf from './formatCpf';
 
 describe('formatCpf', () => {
+  it('should return empty when input is undefined', () => {
+    expect(formatCpf()).toBe('');
+  });
+
+  it('should return empty when input is null', () => {
+    expect(formatCpf(null)).toBe('');
+  });
+
+  it('should return empty when input is empty', () => {
+    expect(formatCpf('')).toBe('');
+  });
+
+  it('should return empty when input is whitespace', () => {
+    expect(formatCpf('   ')).toBe('');
+  });
+
   it('should format the cpf', () => {
     const input = '66273306010';
     expect(formatCpf(input)).toBe('662.733.060-10');
