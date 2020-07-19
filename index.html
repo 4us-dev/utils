@@ -83,10 +83,6 @@
 				<a href="/LICENSE"><img src="https://img.shields.io/npm/l/@angular/cli.svg" alt="license"></a></p>
 				<p>Install with <a href="https://www.npmjs.com/">npm</a></p>
 				<pre><code class="language-sh">npm i @4us-dev/utils</code></pre>
-				<a href="#docs" id="docs" style="color: inherit; text-decoration: none;">
-					<h2>Docs</h2>
-				</a>
-				<p><a href="https://utils.4us.dev/">Full Documentation</a></p>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
@@ -94,12 +90,20 @@
 					<li><a href="#stringutils">StringUtils</a><ul>
 							<li><a href="#isblank-and-isnotblank">isBlank and isNotBlank</a></li>
 							<li><a href="#isempty-and-isnotempty">isEmpty and isNotEmpty</a></li>
+							<li><a href="#hideemail">hideEmail</a></li>
+							<li><a href="#removenonnumeric">removeNonNumeric</a></li>
+							<li><a href="#isinteger">isInteger</a></li>
+							<li><a href="#isdouble">isDouble</a></li>
 						</ul>
 					</li>
 					<li><a href="#randomutils">RandomUtils</a><ul>
 							<li><a href="#nextint">nextInt</a></li>
 							<li><a href="#nextstring">nextString</a></li>
 							<li><a href="#nextstringcustom">nextStringCustom</a></li>
+						</ul>
+					</li>
+					<li><a href="#formatutils">FormatUtils</a><ul>
+							<li><a href="#formatcpf">formatCpf</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -132,6 +136,51 @@
 <span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// false</span>
 <span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<p><code>new StringUtils().isNotEmpty(value)</code> is equal to <code>!new StringUtils().isEmpty(value)</code></p>
+				<a href="#hideemail" id="hideemail" style="color: inherit; text-decoration: none;">
+					<h4>hideEmail</h4>
+				</a>
+				<p>Hides part of the email.
+				You could hide the start and/or the end of email.</p>
+				<p>Examples:</p>
+				<p>Default configuration</p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano@gmail.com`</span>); <span class="hljs-comment">// `f...@gmail.com`</span></code></pre>
+				<p>How ofuscate the ends of the email too</p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano@gmail.com`</span>, {
+  <span class="hljs-attr">hideStart</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true</span>
+  <span class="hljs-attr">hideEnd</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default false</span>
+}); <span class="hljs-comment">// `f...@gma...`</span></code></pre>
+				<p>If the <code>email</code> informed does not contains <code>@</code> or is <code>null</code> or <code>undefined</code>
+				the return of the method will be <code>undefined</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano.com`</span>); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">``</span>); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">``</span>); <span class="hljs-comment">// undefined</span>
+<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-literal">null</span>); <span class="hljs-comment">// undefined</span></code></pre>
+				<a href="#removenonnumeric" id="removenonnumeric" style="color: inherit; text-decoration: none;">
+					<h4>removeNonNumeric</h4>
+				</a>
+				<p>Removes all non-numeric caracteres from string.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().removeNonNumeric(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;</span></code></pre>
+				<a href="#isinteger" id="isinteger" style="color: inherit; text-decoration: none;">
+					<h4>isInteger</h4>
+				</a>
+				<p>Returns true if the value contains only numeric values</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;123&#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;12.3&#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;12,3&#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<a href="#isdouble" id="isdouble" style="color: inherit; text-decoration: none;">
+					<h4>isDouble</h4>
+				</a>
+				<p>Returns true if the value into string is a double</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;123&#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;12.3&#x27;</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;12,3&#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<a href="#randomutils" id="randomutils" style="color: inherit; text-decoration: none;">
 					<h3>RandomUtils</h3>
 				</a>
@@ -172,6 +221,19 @@
 				<p>Examples:</p>
 				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 10 using only `A`, `1` or `c` to generate the result</span>
 <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextStringCustom(<span class="hljs-number">10</span>, <span class="hljs-string">&#x27;A1c&#x27;</span>);</code></pre>
+				<a href="#formatutils" id="formatutils" style="color: inherit; text-decoration: none;">
+					<h3>FormatUtils</h3>
+				</a>
+				<a href="#formatcpf" id="formatcpf" style="color: inherit; text-decoration: none;">
+					<h4>formatCpf</h4>
+				</a>
+				<p>Removes all non-numeric values and apply the cpf mask.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;66273306010&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<p>This should format the cpf partially like this</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;6627330&#x27;</span>); <span class="hljs-comment">// &quot;662.733.0&quot;</span></code></pre>
+				<p>If the value contains non-numeric characters they will be removed in formatting</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;66A27B33C060D10&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -184,10 +246,22 @@
 						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_utils_randomutils_.html">&quot;utils/<wbr>Random<wbr>Utils&quot;</a>
+						<a href="modules/_utils_formatutils_index_.html">&quot;utils/<wbr>Format<wbr>Utils/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_.html">&quot;utils/<wbr>String<wbr>Utils&quot;</a>
+						<a href="modules/_utils_randomutils_index_.html">&quot;utils/<wbr>Random<wbr>Utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_randomutils_nextint_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>Int&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_randomutils_nextstring_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>String&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_hideemail_.html">&quot;utils/<wbr>String<wbr>Utils/hide<wbr>Email&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_index_.html">&quot;utils/<wbr>String<wbr>Utils/index&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -202,6 +276,9 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
