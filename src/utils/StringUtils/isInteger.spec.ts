@@ -12,15 +12,15 @@ describe('isInteger', () => {
     expect(isInteger('')).toBeFalsy();
   });
 
-  it('should return false if value is whitespace ', () => {
+  it('should return false if value is whitespace', () => {
     expect(isInteger('    ')).toBeFalsy();
   });
 
-  it('should return false if value contains caracters non-numeric ', () => {
+  it('should return false if value contains caracters non-numeric', () => {
     expect(isInteger('22a33')).toBeFalsy();
   });
 
-  it('should return false if value contains whitespace around numbers ', () => {
+  it('should return false if value contains whitespace around numbers', () => {
     expect(isInteger(' 2233 ')).toBeFalsy();
   });
 

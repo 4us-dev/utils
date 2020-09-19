@@ -12,15 +12,15 @@ describe('isDouble', () => {
     expect(isDouble('')).toBeFalsy();
   });
 
-  it('should return false if value is whitespace ', () => {
+  it('should return false if value is whitespace', () => {
     expect(isDouble('    ')).toBeFalsy();
   });
 
-  it('should return false if value contains caracters non-numeric ', () => {
+  it('should return false if value contains caracters non-numeric', () => {
     expect(isDouble('22a33')).toBeFalsy();
   });
 
-  it('should return false if value contains whitespace around numbers ', () => {
+  it('should return false if value contains whitespace around numbers', () => {
     expect(isDouble(' 2233 ')).toBeFalsy();
   });
 
