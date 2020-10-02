@@ -104,18 +104,21 @@
 					</li>
 					<li><a href="#formatutils">FormatUtils</a><ul>
 							<li><a href="#formatcpf">formatCpf</a></li>
+							<li><a href="#formatphone">formatPhone</a></li>
+							<li><a href="#formatcep">formatCep</a></li>
+							<li><a href="#onlyintegers">onlyIntegers</a></li>
 						</ul>
 					</li>
 				</ul>
 				<a href="#introduction" id="introduction" style="color: inherit; text-decoration: none;">
-					<h3>Introduction</h3>
+					<h2>Introduction</h2>
 				</a>
 				<p><code>@4us-dev/utils</code> is a lib with utility methods to help developers during software development. It is developed with best practices in mind and to facilitate unit testing of your code. So, it does not have any static method, thus facilitating the practice of mocks during tests when necessary.</p>
 				<a href="#stringutils" id="stringutils" style="color: inherit; text-decoration: none;">
-					<h3>StringUtils</h3>
+					<h2>StringUtils</h2>
 				</a>
 				<a href="#isblank-and-isnotblank" id="isblank-and-isnotblank" style="color: inherit; text-decoration: none;">
-					<h4>isBlank and isNotBlank</h4>
+					<h3><code>isBlank</code> and <code>isNotBlank</code></h3>
 				</a>
 				<p>isBlank return true if value is null, undefined, empty or string with only white spaces.</p>
 				<p>Examples:</p>
@@ -126,7 +129,7 @@
 <span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<p><code>new StringUtils().isNotBlank(value)</code> is equal to <code>!new StringUtils().isBlank(value)</code></p>
 				<a href="#isempty-and-isnotempty" id="isempty-and-isnotempty" style="color: inherit; text-decoration: none;">
-					<h4>isEmpty and isNotEmpty</h4>
+					<h3><code>isEmpty</code> and <code>isNotEmpty</code></h3>
 				</a>
 				<p>isEmpty return true if value is null, undefined, or empty.</p>
 				<p>Examples:</p>
@@ -137,7 +140,7 @@
 <span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<p><code>new StringUtils().isNotEmpty(value)</code> is equal to <code>!new StringUtils().isEmpty(value)</code></p>
 				<a href="#hideemail" id="hideemail" style="color: inherit; text-decoration: none;">
-					<h4>hideEmail</h4>
+					<h3><code>hideEmail</code></h3>
 				</a>
 				<p>Hides part of the email.
 				You could hide the start and/or the end of email.</p>
@@ -156,13 +159,13 @@
 <span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">``</span>); <span class="hljs-comment">// undefined</span>
 <span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-literal">null</span>); <span class="hljs-comment">// undefined</span></code></pre>
 				<a href="#removenonnumeric" id="removenonnumeric" style="color: inherit; text-decoration: none;">
-					<h4>removeNonNumeric</h4>
+					<h3><code>removeNonNumeric</code></h3>
 				</a>
 				<p>Removes all non-numeric caracteres from string.</p>
 				<p>Examples:</p>
 				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().removeNonNumeric(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;</span></code></pre>
 				<a href="#isinteger" id="isinteger" style="color: inherit; text-decoration: none;">
-					<h4>isInteger</h4>
+					<h3><code>isInteger</code></h3>
 				</a>
 				<p>Returns true if the value contains only numeric values</p>
 				<p>Examples:</p>
@@ -172,7 +175,7 @@
 <span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
 <span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<a href="#isdouble" id="isdouble" style="color: inherit; text-decoration: none;">
-					<h4>isDouble</h4>
+					<h3><code>isDouble</code></h3>
 				</a>
 				<p>Returns true if the value into string is a double</p>
 				<p>Examples:</p>
@@ -182,10 +185,10 @@
 <span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
 <span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
 				<a href="#randomutils" id="randomutils" style="color: inherit; text-decoration: none;">
-					<h3>RandomUtils</h3>
+					<h2>RandomUtils</h2>
 				</a>
 				<a href="#nextint" id="nextint" style="color: inherit; text-decoration: none;">
-					<h4>nextInt</h4>
+					<h3><code>nextInt</code></h3>
 				</a>
 				<p>Generates a random integer between the <code>min</code> and <code>max</code> inclusive.</p>
 				<p>Examples:</p>
@@ -195,7 +198,7 @@
 <span class="hljs-comment">// the return can be one of this values 0, 1, 2 or 3</span>
 <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().getRandomInteger({ <span class="hljs-attr">min</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">3</span> });</code></pre>
 				<a href="#nextstring" id="nextstring" style="color: inherit; text-decoration: none;">
-					<h4>nextString</h4>
+					<h3><code>nextString</code></h3>
 				</a>
 				<p>Generates a random string.</p>
 				<p>Examples:</p>
@@ -215,17 +218,17 @@
   <span class="hljs-attr">specialAmbiguous</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default true ex: &quot;()\&#x27;`´{[]}/&gt;&lt;</span>
 });</code></pre>
 				<a href="#nextstringcustom" id="nextstringcustom" style="color: inherit; text-decoration: none;">
-					<h4>nextStringCustom</h4>
+					<h3><code>nextStringCustom</code></h3>
 				</a>
 				<p>Generates a random string with <code>length</code> informed and using <code>caracteresAllowed</code> variable as reference.</p>
 				<p>Examples:</p>
 				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 10 using only `A`, `1` or `c` to generate the result</span>
 <span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextStringCustom(<span class="hljs-number">10</span>, <span class="hljs-string">&#x27;A1c&#x27;</span>);</code></pre>
 				<a href="#formatutils" id="formatutils" style="color: inherit; text-decoration: none;">
-					<h3>FormatUtils</h3>
+					<h2>FormatUtils</h2>
 				</a>
 				<a href="#formatcpf" id="formatcpf" style="color: inherit; text-decoration: none;">
-					<h4>formatCpf</h4>
+					<h3><code>formatCpf</code></h3>
 				</a>
 				<p>Removes all non-numeric values and apply the cpf mask.</p>
 				<p>Examples:</p>
@@ -234,6 +237,33 @@
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;6627330&#x27;</span>); <span class="hljs-comment">// &quot;662.733.0&quot;</span></code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;66A27B33C060D10&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<a href="#formatphone" id="formatphone" style="color: inherit; text-decoration: none;">
+					<h3><code>formatPhone</code></h3>
+				</a>
+				<p>Removes all non-numeric values and apply the phone mask (99)9999-9999 or (99)99999-9999.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;85999432345&#x27;</span>); <span class="hljs-comment">// &quot;(85)99943-2345&quot;</span>
+<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;8599943234&#x27;</span>); <span class="hljs-comment">// &quot;(85)9994-3234&quot;</span></code></pre>
+				<p>This should format the phone partially like this</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;8599943&#x27;</span>); <span class="hljs-comment">// &quot;(85)9994-3&quot;</span></code></pre>
+				<p>If the value contains non-numeric characters they will be removed in formatting</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;A8B5C9D9f9g4h3i23s4w5q&#x27;</span>); <span class="hljs-comment">// &quot;(85)99943-2345&quot;</span></code></pre>
+				<a href="#formatcep" id="formatcep" style="color: inherit; text-decoration: none;">
+					<h3><code>formatCEP</code></h3>
+				</a>
+				<p>Removes all non-numeric values and apply the CEP mask 99999-999</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;60601023&#x27;</span>); <span class="hljs-comment">// &quot;60601-023&quot;</span></code></pre>
+				<p>This should format the cep partially like this</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;606010&#x27;</span>); <span class="hljs-comment">// &quot;60601-0&quot;</span></code></pre>
+				<p>If the value contains non-numeric characters they will be removed in formatting</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;A60b601c02D3E&#x27;</span>); <span class="hljs-comment">// &quot;60601-023&quot;</span></code></pre>
+				<a href="#formatonlyintegers" id="formatonlyintegers" style="color: inherit; text-decoration: none;">
+					<h3><code>formatOnlyIntegers</code></h3>
+				</a>
+				<p>Removes all non-numeric caracteres from string.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatOnlyIntegers(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;060-10&quot;</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
