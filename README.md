@@ -37,14 +37,17 @@ npm i @4us-dev/utils
   - [nextStringCustom](#nextstringcustom)
 - [FormatUtils](#formatutils)
   - [formatCpf](#formatcpf)
+  - [formatPhone](#formatphone)
+  - [formatCep](#formatcep)
+  - [onlyIntegers](#onlyintegers)
 
-### Introduction
+## Introduction
 
 `@4us-dev/utils` is a lib with utility methods to help developers during software development. It is developed with best practices in mind and to facilitate unit testing of your code. So, it does not have any static method, thus facilitating the practice of mocks during tests when necessary.
 
-### StringUtils
+## StringUtils
 
-#### isBlank and isNotBlank
+### `isBlank` and `isNotBlank`
 
 isBlank return true if value is null, undefined, empty or string with only white spaces.
 
@@ -60,7 +63,7 @@ new StringUtils().isBlank('a'); // false
 
 `new StringUtils().isNotBlank(value)` is equal to `!new StringUtils().isBlank(value)`
 
-#### isEmpty and isNotEmpty
+### `isEmpty` and `isNotEmpty`
 
 isEmpty return true if value is null, undefined, or empty.
 
@@ -76,7 +79,7 @@ new StringUtils().isEmpty('a'); // false
 
 `new StringUtils().isNotEmpty(value)` is equal to `!new StringUtils().isEmpty(value)`
 
-#### hideEmail
+### `hideEmail`
 
 Hides part of the email.
 You could hide the start and/or the end of email.
@@ -108,7 +111,7 @@ new StringUtils().hideEmail(``); // undefined
 new StringUtils().hideEmail(null); // undefined
 ```
 
-#### removeNonNumeric
+### `removeNonNumeric`
 
 Removes all non-numeric caracteres from string.
 
@@ -118,7 +121,7 @@ Examples:
 new StringUtils().removeNonNumeric('a1b2c3'); // '123'
 ```
 
-#### isInteger
+### `isInteger`
 
 Returns true if the value contains only numeric values
 
@@ -132,7 +135,7 @@ new StringUtils().isInteger('a1b2c3'); // false
 new StringUtils().isInteger(' 123 '); // false
 ```
 
-#### isDouble
+### `isDouble`
 
 Returns true if the value into string is a double
 
@@ -146,9 +149,9 @@ new StringUtils().isDouble('a1b2c3'); // false
 new StringUtils().isDouble(' 123 '); // false
 ```
 
-### RandomUtils
+## RandomUtils
 
-#### nextInt
+### `nextInt`
 
 Generates a random integer between the `min` and `max` inclusive.
 
@@ -162,7 +165,7 @@ const value = new RandomUtils().getRandomInteger();
 const value = new RandomUtils().getRandomInteger({ min: 0, max: 3 });
 ```
 
-#### nextString
+### `nextString`
 
 Generates a random string.
 
@@ -186,7 +189,7 @@ const value = new RandomUtils().nextString({
 });
 ```
 
-#### nextStringCustom
+### `nextStringCustom`
 
 Generates a random string with `length` informed and using `caracteresAllowed` variable as reference.
 
@@ -197,9 +200,9 @@ Examples:
 const value = new RandomUtils().nextStringCustom(10, 'A1c');
 ```
 
-### FormatUtils
+## FormatUtils
 
-#### formatCpf
+### `formatCpf`
 
 Removes all non-numeric values and apply the cpf mask.
 
@@ -219,4 +222,59 @@ If the value contains non-numeric characters they will be removed in formatting
 
 ```js
 const value = new FormatUtils().formatCpf('66A27B33C060D10'); // "662.733.060-10"
+```
+
+### `formatPhone`
+
+Removes all non-numeric values and apply the phone mask (99)9999-9999 or (99)99999-9999.
+
+Examples:
+
+```js
+const value = new FormatUtils().formatPhone('85999432345'); // "(85)99943-2345"
+const value = new FormatUtils().formatPhone('8599943234'); // "(85)9994-3234"
+```
+
+This should format the phone partially like this
+
+```js
+const value = new FormatUtils().formatPhone('8599943'); // "(85)9994-3"
+```
+
+If the value contains non-numeric characters they will be removed in formatting
+
+```js
+const value = new FormatUtils().formatPhone('A8B5C9D9f9g4h3i23s4w5q'); // "(85)99943-2345"
+```
+
+### `formatCEP`
+
+Removes all non-numeric values and apply the CEP mask 99999-999
+
+Examples:
+
+```js
+const value = new FormatUtils().formatPhone('60601023'); // "60601-023"
+```
+
+This should format the cep partially like this
+
+```js
+const value = new FormatUtils().formatPhone('606010'); // "60601-0"
+```
+
+If the value contains non-numeric characters they will be removed in formatting
+
+```js
+const value = new FormatUtils().formatPhone('A60b601c02D3E'); // "60601-023"
+```
+
+### `formatOnlyIntegers`
+
+Removes all non-numeric caracteres from string.
+
+Examples:
+
+```js
+const value = new FormatUtils().formatOnlyIntegers('a1b2c3'); // '123'060-10"
 ```
