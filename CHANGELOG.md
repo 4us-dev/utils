@@ -1,4 +1,4 @@
-## [0.0.7](https://github.com/4us-dev/4us-utils/compare/v0.0.6...v0.0.7) (2020-10-02)
+## [0.0.8](https://github.com/4us-dev/4us-utils/compare/v0.0.6...v0.0.8) (2020-10-02)
 
 ### Bug fix
 
