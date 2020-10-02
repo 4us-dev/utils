@@ -64,7 +64,7 @@ describe('formatPhone', () => {
 
   it('should format the phone with 2 digits', () => {
     const input = '85';
-    expect(formatPhone(input)).toBe('(85)');
+    expect(formatPhone(input)).toBe('(85');
   });
 
   it('should format the phone with 1 digits', () => {

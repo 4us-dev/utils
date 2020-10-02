@@ -15,7 +15,7 @@ export default (phone?: string | null): string => {
       2,
       6
     )}-${phone.substring(6)}`;
-  } else if (phone.length > 1) {
+  } else if (phone.length > 2) {
     phone = `(${phone.substring(0, 2)})${phone.substring(2)}`;
   } else if (phone.length > 0) {
     phone = `(${phone}`;
