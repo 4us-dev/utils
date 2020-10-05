@@ -103,10 +103,16 @@
 						</ul>
 					</li>
 					<li><a href="#formatutils">FormatUtils</a><ul>
-							<li><a href="#formatcpf">formatCpf</a></li>
+							<li><a href="#formatCPF">formatCPF</a></li>
+							<li><a href="#formatCNPJ">formatCNPJ</a></li>
 							<li><a href="#formatphone">formatPhone</a></li>
-							<li><a href="#formatcep">formatCep</a></li>
+							<li><a href="#formatCEP">formatCEP</a></li>
 							<li><a href="#onlyintegers">onlyIntegers</a></li>
+						</ul>
+					</li>
+					<li><a href="#validatorutils">ValidatorUtils</a><ul>
+							<li><a href="#validatorCPF">validatorCPF</a></li>
+							<li><a href="#validatorCNPJ">validatorCNPJ</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -228,15 +234,25 @@
 					<h2>FormatUtils</h2>
 				</a>
 				<a href="#formatcpf" id="formatcpf" style="color: inherit; text-decoration: none;">
-					<h3><code>formatCpf</code></h3>
+					<h3><code>formatCPF</code></h3>
 				</a>
-				<p>Removes all non-numeric values and apply the cpf mask.</p>
+				<p>Removes all non-numeric values and apply the CPF mask.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;66273306010&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
-				<p>This should format the cpf partially like this</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;6627330&#x27;</span>); <span class="hljs-comment">// &quot;662.733.0&quot;</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;66273306010&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<p>This should format the CPF partially like this</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;6627330&#x27;</span>); <span class="hljs-comment">// &quot;662.733.0&quot;</span></code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCpf(<span class="hljs-string">&#x27;66A27B33C060D10&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;66A27B33C060D10&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<a href="#formatcnpj" id="formatcnpj" style="color: inherit; text-decoration: none;">
+					<h3><code>formatCNPJ</code></h3>
+				</a>
+				<p>Removes all non-numeric values and apply the CNPJ mask.</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;94338204000180&#x27;</span>); <span class="hljs-comment">// &quot;94.338.204/0001-80&quot;</span></code></pre>
+				<p>This should format the CNPJ partially like this</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;9433820&#x27;</span>); <span class="hljs-comment">// &quot;94.338.20&quot;</span></code></pre>
+				<p>If the value contains non-numeric characters they will be removed in formatting</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;943A382B04000C180&#x27;</span>); <span class="hljs-comment">// &quot;94.338.204/0001-80&quot;</span></code></pre>
 				<a href="#formatphone" id="formatphone" style="color: inherit; text-decoration: none;">
 					<h3><code>formatPhone</code></h3>
 				</a>
@@ -264,6 +280,43 @@
 				<p>Removes all non-numeric caracteres from string.</p>
 				<p>Examples:</p>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatOnlyIntegers(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;060-10&quot;</span></code></pre>
+				<a href="#validatorutils" id="validatorutils" style="color: inherit; text-decoration: none;">
+					<h2>ValidatorUtils</h2>
+				</a>
+				<a href="#iscpf" id="iscpf" style="color: inherit; text-decoration: none;">
+					<h3><code>isCPF</code></h3>
+				</a>
+				<p>Return true when CPF is valid</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> validatorUtils = <span class="hljs-keyword">new</span> ValidatorUtils();</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCPF(<span class="hljs-string">&#x27;66273306010&#x27;</span>)) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is valid&#x27;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is not valid&#x27;</span>);
+}</code></pre>
+				<p>or</p>
+				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCPF(<span class="hljs-string">&#x27;662.733.060-10&#x27;</span>)) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is valid&#x27;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is not valid&#x27;</span>);
+}</code></pre>
+				<a href="#iscnpj" id="iscnpj" style="color: inherit; text-decoration: none;">
+					<h3><code>isCNPJ</code></h3>
+				</a>
+				<p>Return true when CNPJ is valid</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> validatorUtils = <span class="hljs-keyword">new</span> ValidatorUtils();</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCNPJ(<span class="hljs-string">&#x27;94338204000180&#x27;</span>)) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is valid&#x27;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is not valid&#x27;</span>);
+}</code></pre>
+				<p>or</p>
+				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCNPJ(<span class="hljs-string">&#x27;94.338.204/0001-80&#x27;</span>)) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is valid&#x27;</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is not valid&#x27;</span>);
+}</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -274,6 +327,21 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_formatutils_formatcep_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCEP&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_formatutils_formatcnpj_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCNPJ&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_formatutils_formatcpf_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCPF&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_formatutils_formatonlyintegers_.html">&quot;utils/<wbr>Format<wbr>Utils/format<wbr>Only<wbr>Integers&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_formatutils_formatphone_.html">&quot;utils/<wbr>Format<wbr>Utils/format<wbr>Phone&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_utils_formatutils_index_.html">&quot;utils/<wbr>Format<wbr>Utils/index&quot;</a>
@@ -288,10 +356,43 @@
 						<a href="modules/_utils_randomutils_nextstring_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>String&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_utils_randomutils_nextstringcustom_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>String<wbr>Custom&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_utils_stringutils_hideemail_.html">&quot;utils/<wbr>String<wbr>Utils/hide<wbr>Email&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_utils_stringutils_index_.html">&quot;utils/<wbr>String<wbr>Utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isblank_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Blank&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isdouble_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Double&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isempty_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Empty&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isinteger_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Integer&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isnotblank_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Not<wbr>Blank&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_isnotempty_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Not<wbr>Empty&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_stringutils_removenonnumeric_.html">&quot;utils/<wbr>String<wbr>Utils/remove<wbr>Non<wbr>Numeric&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_validatorutils_index_.html">&quot;utils/<wbr>Validator<wbr>Utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_validatorutils_iscnpj_.html">&quot;utils/<wbr>Validator<wbr>Utils/isCNPJ&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_validatorutils_iscpf_.html">&quot;utils/<wbr>Validator<wbr>Utils/isCPF&quot;</a>
 					</li>
 				</ul>
 			</nav>
