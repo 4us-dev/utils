@@ -36,10 +36,14 @@ npm i @4us-dev/utils
   - [nextString](#nextstring)
   - [nextStringCustom](#nextstringcustom)
 - [FormatUtils](#formatutils)
-  - [formatCpf](#formatcpf)
+  - [formatCPF](#formatCPF)
+  - [formatCNPJ](#formatCNPJ)
   - [formatPhone](#formatphone)
-  - [formatCep](#formatcep)
+  - [formatCEP](#formatCEP)
   - [onlyIntegers](#onlyintegers)
+- [ValidatorUtils](#validatorutils)
+  - [validatorCPF](#validatorCPF)
+  - [validatorCNPJ](#validatorCNPJ)
 
 ## Introduction
 
@@ -202,26 +206,48 @@ const value = new RandomUtils().nextStringCustom(10, 'A1c');
 
 ## FormatUtils
 
-### `formatCpf`
+### `formatCPF`
 
-Removes all non-numeric values and apply the cpf mask.
+Removes all non-numeric values and apply the CPF mask.
 
 Examples:
 
 ```js
-const value = new FormatUtils().formatCpf('66273306010'); // "662.733.060-10"
+const value = new FormatUtils().formatCPF('66273306010'); // "662.733.060-10"
 ```
 
-This should format the cpf partially like this
+This should format the CPF partially like this
 
 ```js
-const value = new FormatUtils().formatCpf('6627330'); // "662.733.0"
+const value = new FormatUtils().formatCPF('6627330'); // "662.733.0"
 ```
 
 If the value contains non-numeric characters they will be removed in formatting
 
 ```js
-const value = new FormatUtils().formatCpf('66A27B33C060D10'); // "662.733.060-10"
+const value = new FormatUtils().formatCPF('66A27B33C060D10'); // "662.733.060-10"
+```
+
+### `formatCNPJ`
+
+Removes all non-numeric values and apply the CNPJ mask.
+
+Examples:
+
+```js
+const value = new FormatUtils().formatCNPJ('94338204000180'); // "94.338.204/0001-80"
+```
+
+This should format the CNPJ partially like this
+
+```js
+const value = new FormatUtils().formatCNPJ('9433820'); // "94.338.20"
+```
+
+If the value contains non-numeric characters they will be removed in formatting
+
+```js
+const value = new FormatUtils().formatCNPJ('943A382B04000C180'); // "94.338.204/0001-80"
 ```
 
 ### `formatPhone`
@@ -277,4 +303,62 @@ Examples:
 
 ```js
 const value = new FormatUtils().formatOnlyIntegers('a1b2c3'); // '123'060-10"
+```
+
+## ValidatorUtils
+
+### `isCPF`
+
+Return true when CPF is valid
+
+Examples:
+
+```js
+const validatorUtils = new ValidatorUtils();
+```
+
+```js
+if (validatorUtils.isCPF('66273306010')) {
+  console.log('CPF is valid');
+} else {
+  console.log('CPF is not valid');
+}
+```
+
+or
+
+```js
+if (validatorUtils.isCPF('662.733.060-10')) {
+  console.log('CPF is valid');
+} else {
+  console.log('CPF is not valid');
+}
+```
+
+### `isCNPJ`
+
+Return true when CNPJ is valid
+
+Examples:
+
+```js
+const validatorUtils = new ValidatorUtils();
+```
+
+```js
+if (validatorUtils.isCNPJ('94338204000180')) {
+  console.log('CNPJ is valid');
+} else {
+  console.log('CNPJ is not valid');
+}
+```
+
+or
+
+```js
+if (validatorUtils.isCNPJ('94.338.204/0001-80')) {
+  console.log('CNPJ is valid');
+} else {
+  console.log('CNPJ is not valid');
+}
 ```

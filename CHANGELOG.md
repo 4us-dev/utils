@@ -1,3 +1,17 @@
+# What's news
+
+## [0.0.9](https://github.com/4us-dev/4us-utils/compare/v0.0.8...v0.0.9) (2020-10-05)
+
+### Features
+
+- ValidatorUtils
+
+  - isCPF
+  - isCNPJ
+
+- FormatUtils
+  - formatCNPJ
+
 ## [0.0.8](https://github.com/4us-dev/4us-utils/compare/v0.0.6...v0.0.8) (2020-10-02)
 
 ### Bug fix
@@ -23,7 +37,7 @@
   - isInteger
   - isDouble
 - FormatUtils
-  - formatCpf
+  - formatCPF
 
 ## [0.0.3](https://github.com/4us-dev/4us-utils/compare/v0.0.2...v0.0.3) (2020-07-12)
 

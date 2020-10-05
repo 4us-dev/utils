@@ -1,5 +1,6 @@
 import formatCEP from './formatCEP';
-import formatCpf from './formatCpf';
+import formatCNPJ from './formatCNPJ';
+import formatCPF from './formatCPF';
 import formatOnlyIntegers from './formatOnlyIntegers';
 import formatPhone from './formatPhone';
 
@@ -10,25 +11,45 @@ import formatPhone from './formatPhone';
  */
 export default class FormatUtils {
   /**
-   * Removes all non-numeric values and apply the cpf mask.
+   * Removes all non-numeric values and apply the CPF mask.
    *
    * @since v0.0.5
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
-   * const value = new FormatUtils().formatCpf("66273306010") // "662.733.060-10"
+   * const value = new FormatUtils().formatCPF("66273306010") // "662.733.060-10"
    *
    * @description
-   * This should format the cpf partially like this
+   * This should format the CPF partially like this
    * @example
-   * const value = new FormatUtils().formatCpf("6627330") // "662.733.0"
+   * const value = new FormatUtils().formatCPF("6627330") // "662.733.0"
    *
    * @description
    * If the value contains non-numeric characters they will be removed in formatting
    * @example
-   * const value = new FormatUtils().formatCpf("66A27B33C060D10") // "662.733.060-10"
+   * const value = new FormatUtils().formatCPF("66A27B33C060D10") // "662.733.060-10"
    */
-  formatCpf = formatCpf;
+  formatCPF = formatCPF;
+  /**
+   * Removes all non-numeric values and apply the CNPJ mask.
+   *
+   * @since v0.0.9
+   * @author Clairton luz <clairton.c.l@gmail.com>
+   *
+   * @example
+   * const value = new FormatUtils().formatCNPJ('94338204000180'); // "94.338.204/0001-80"
+   *
+   * @description
+   * This should format the CNPJ partially like this
+   * @example
+   * const value = new FormatUtils().formatCNPJ("9433820") // "94.338.20"
+   *
+   * @description
+   * If the value contains non-numeric characters they will be removed in formatting
+   * @example
+   * const value = new FormatUtils().formatCNPJ("943A382B04000C180") // "94.338.204/0001-80"
+   */
+  formatCNPJ = formatCNPJ;
   /**
    * Removes all non-numeric values and apply the CEP mask 99999-999
    *
