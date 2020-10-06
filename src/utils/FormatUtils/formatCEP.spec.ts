@@ -18,27 +18,26 @@ describe('formatCEP', () => {
   });
 
   it('should format the CEP', () => {
-    const input = '61607045';
-    expect(formatCEP(input)).toBe('61607-045');
+    expect(formatCEP('61607045')).toBe('61607-045');
   });
 
   it('should format the CEP with 5 caracteres', () => {
-    const input = '61607';
-    expect(formatCEP(input)).toBe('61607');
+    expect(formatCEP('61607')).toBe('61607');
   });
 
   it('should format the CEP with 6 caracteres', () => {
-    const input = '616070';
-    expect(formatCEP(input)).toBe('61607-0');
+    expect(formatCEP('616070')).toBe('61607-0');
   });
 
   it('should format the CEP with 7 caracteres', () => {
-    const input = '6160704';
-    expect(formatCEP(input)).toBe('61607-04');
+    expect(formatCEP('6160704')).toBe('61607-04');
   });
 
   it('should format the CEP with 8 caracteres', () => {
-    const input = '61607045';
-    expect(formatCEP(input)).toBe('61607-045');
+    expect(formatCEP('61607045')).toBe('61607-045');
+  });
+
+  it('should truncate CEP if it have size grater than 8 and format', () => {
+    expect(formatCEP('616070454')).toBe('61607-045');
   });
 });

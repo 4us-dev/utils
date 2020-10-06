@@ -18,18 +18,15 @@ describe('isCNPJ', () => {
   });
 
   it('should return true with CNPJ valid with mask', () => {
-    const input = '94.338.204/0001-80';
-    expect(isCNPJ(input)).toBeTruthy();
+    expect(isCNPJ('94.338.204/0001-80')).toBeTruthy();
   });
 
   it('should return true with CNPJ valid without mask', () => {
-    const input = '94338204000180';
-    expect(isCNPJ(input)).toBeTruthy();
+    expect(isCNPJ('94338204000180')).toBeTruthy();
   });
 
   it('should return false when CNPJ is invalid with mask', () => {
-    const input = '94.338.204/0001-81';
-    expect(isCNPJ(input)).toBeFalsy();
+    expect(isCNPJ('94.338.204/0001-81')).toBeFalsy();
   });
 
   it('should return true when first check digit is 0 and valid', () => {
@@ -41,23 +38,19 @@ describe('isCNPJ', () => {
   });
 
   it('should return true when second check digit is 0 and valid', () => {
-    const input = '94338204000180';
-    expect(isCNPJ(input)).toBeTruthy();
+    expect(isCNPJ('94338204000180')).toBeTruthy();
   });
 
   it('should return true when second check digit is invalid', () => {
-    const input = '94338204000182';
-    expect(isCNPJ(input)).toBeFalsy();
+    expect(isCNPJ('94338204000182')).toBeFalsy();
   });
 
   it('should return false when CNPJ is invalid without mask', () => {
-    const input = '94338204000181';
-    expect(isCNPJ(input)).toBeFalsy();
+    expect(isCNPJ('94338204000181')).toBeFalsy();
   });
 
   it('should return false if contains letters', () => {
-    const input = '94338204000t180';
-    expect(isCNPJ(input)).toBeFalsy();
+    expect(isCNPJ('94338204000t180')).toBeFalsy();
   });
 
   it('should return false if CNPJ is 00000000000000', () => {
