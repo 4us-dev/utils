@@ -76,4 +76,16 @@ describe('isCPF', () => {
   it('should return false if CPF is 99999999999', () => {
     expect(isCPF('99999999999')).toBeFalsy();
   });
+
+  it('should test first check digit with 0', () => {
+    expect(isCPF('36342487006')).toBeTruthy();
+  });
+
+  it('should test first check digit invalid', () => {
+    expect(isCPF('36342487016')).toBeFalsy();
+  });
+
+  it('should test second check digit with 0', () => {
+    expect(isCPF('14538220620')).toBeTruthy();
+  });
 });

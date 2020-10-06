@@ -1,5 +1,11 @@
 # What's news
 
+## [0.0.10](https://github.com/4us-dev/4us-utils/compare/v0.0.9...v0.0.10) (2020-10-06)
+
+### Fix
+
+- Exporting ValidatorUtils
+
 ## [0.0.9](https://github.com/4us-dev/4us-utils/compare/v0.0.8...v0.0.9) (2020-10-05)
 
 ### Features
