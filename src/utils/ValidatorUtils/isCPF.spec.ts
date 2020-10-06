@@ -86,6 +86,6 @@ describe('isCPF', () => {
   });
 
   it('should test second check digit with 0', () => {
-    expect(isCPF('14538220620')).toBeTruthy();
+    expect(isCPF('11318542090')).toBeTruthy();
   });
 });
