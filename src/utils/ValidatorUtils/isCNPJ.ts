@@ -24,28 +24,28 @@ export default (cnpj?: string | null): boolean => {
     return false;
   }
 
-  let tamanho = cnpj.length - 2;
-  let numeros = cnpj.substring(0, tamanho);
-  const digitos = cnpj.substring(tamanho);
-  let soma = 0;
-  let pos = tamanho - 7;
-  for (let i = tamanho; i >= 1; i--) {
-    soma += parseInt(numeros.charAt(tamanho - i)) * pos--;
+  let size = cnpj.length - 2;
+  let digits = cnpj.substring(0, size);
+  const checkerCode = cnpj.substring(size);
+  let sum = 0;
+  let pos = size - 7;
+  for (let i = size; i >= 1; i--) {
+    sum += parseInt(digits.charAt(size - i)) * pos--;
     if (pos < 2) pos = 9;
   }
-  let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-  if (resultado != parseInt(digitos.charAt(0))) return false;
+  const firstCheckerCode = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  if (firstCheckerCode != parseInt(checkerCode.charAt(0))) return false;
 
-  tamanho = tamanho + 1;
-  numeros = cnpj.substring(0, tamanho);
-  soma = 0;
-  pos = tamanho - 7;
-  for (let i = tamanho; i >= 1; i--) {
-    soma += parseInt(numeros.charAt(tamanho - i)) * pos--;
+  size = size + 1;
+  digits = cnpj.substring(0, size);
+  sum = 0;
+  pos = size - 7;
+  for (let i = size; i >= 1; i--) {
+    sum += parseInt(digits.charAt(size - i)) * pos--;
     if (pos < 2) pos = 9;
   }
-  resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
-  if (resultado != parseInt(digitos.charAt(1))) return false;
+  const secondCheckerCode = sum % 11 < 2 ? 0 : 11 - (sum % 11);
+  if (secondCheckerCode != parseInt(checkerCode.charAt(1))) return false;
 
   return true;
 };

@@ -32,6 +32,24 @@ describe('isCNPJ', () => {
     expect(isCNPJ(input)).toBeFalsy();
   });
 
+  it('should return true when first check digit is 0 and valid', () => {
+    expect(isCNPJ('04220539000107')).toBeTruthy();
+  });
+
+  it('should return false when first check digit is invalid', () => {
+    expect(isCNPJ('04220539000117')).toBeFalsy();
+  });
+
+  it('should return true when second check digit is 0 and valid', () => {
+    const input = '94338204000180';
+    expect(isCNPJ(input)).toBeTruthy();
+  });
+
+  it('should return true when second check digit is invalid', () => {
+    const input = '94338204000182';
+    expect(isCNPJ(input)).toBeFalsy();
+  });
+
   it('should return false when CNPJ is invalid without mask', () => {
     const input = '94338204000181';
     expect(isCNPJ(input)).toBeFalsy();
