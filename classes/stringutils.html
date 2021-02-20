@@ -1,0 +1,721 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>StringUtils | @4us-dev/utils</title>
+	<meta name="description" content="Documentation for @4us-dev/utils">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@4us-dev/utils</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">@4us-dev/utils</a>
+				</li>
+				<li>
+					<a href="stringutils.html">StringUtils</a>
+				</li>
+			</ul>
+			<h1>Class StringUtils</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>since</dt>
+						<dd><p>v0.0.1</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">StringUtils</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="stringutils.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#hideemail" class="tsd-kind-icon">hide<wbr>Email</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isblank" class="tsd-kind-icon">is<wbr>Blank</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isdouble" class="tsd-kind-icon">is<wbr>Double</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isinteger" class="tsd-kind-icon">is<wbr>Integer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isnotblank" class="tsd-kind-icon">is<wbr>Not<wbr>Blank</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#isnotempty" class="tsd-kind-icon">is<wbr>Not<wbr>Empty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stringutils.html#removenonnumeric" class="tsd-kind-icon">remove<wbr>Non<wbr>Numeric</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>String<wbr>Utils<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="stringutils.html" class="tsd-signature-type" data-tsd-kind="Class">StringUtils</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="stringutils.html" class="tsd-signature-type" data-tsd-kind="Class">StringUtils</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="hideemail" class="tsd-anchor"></a>
+					<h3>hide<wbr>Email</h3>
+					<div class="tsd-signature tsd-kind-icon">hide<wbr>Email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HideMailConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L131">utils/StringUtils/index.ts:131</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Hide part of the email.</p>
+						</div>
+						<p>You could hide the start and/or the end of email.</p>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>The email to be hided</p>
+							</dd>
+							<dt>param</dt>
+							<dd><p>Setting how the email should be hided</p>
+							</dd>
+							<dt>returns</dt>
+							<dd><p>email hided</p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.5</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(<code>fulano@gmail.com</code>) // <code>f...@gmail.com</code></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(<code>fulano@gmail.com</code>, {
+									hideStart: true, // default true
+									hideEnd: true, // default false
+								}) // <code>f...@gma...</code></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(<code>fulano.com</code>) // undefined</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(``) // undefined</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(``) // undefined</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>hideEmail(null) // undefined</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">HideMailConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> email: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5>config: <span class="tsd-signature-type">HideMailConfig</span><span class="tsd-signature-symbol"> = ...</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isblank" class="tsd-anchor"></a>
+					<h3>is<wbr>Blank</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Blank<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L35">utils/StringUtils/index.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>Checks if a string is <code>null</code>, <code>undefined</code>, <code>empty</code> or <code>whitespace</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.1</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(null) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(undefined) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(&#39;&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(&#39;   &#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(&#39;a&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isBlank(&#39;   a   &#39;) // false</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isdouble" class="tsd-anchor"></a>
+					<h3>is<wbr>Double</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Double<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L197">utils/StringUtils/index.ts:197</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns true if the value into string is a double</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>String to be processed</p>
+							</dd>
+							<dt>returns</dt>
+							<dd><p><code>boolean</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.5</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isDouble(&#39;123&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isDouble(&#39;12.3&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isDouble(&#39;12,3&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isDouble(&#39;a1b2c3&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isDouble(&#39; 123 &#39;) // false</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isempty" class="tsd-anchor"></a>
+					<h3>is<wbr>Empty</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Empty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L79">utils/StringUtils/index.ts:79</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>Checks if a string is <code>null</code>, <code>undefined</code> or <code>empty</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.1</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(null) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(undefined) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(&#39;&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(&#39;   &#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(&#39;a&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isEmpty(&#39;   a   &#39;) // false</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isinteger" class="tsd-anchor"></a>
+					<h3>is<wbr>Integer</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Integer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L171">utils/StringUtils/index.ts:171</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Returns true if the value contains only numeric values</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>String to be processed</p>
+							</dd>
+							<dt>returns</dt>
+							<dd><p><code>boolean</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.5</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isInteger(&#39;123&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isInteger(&#39;12.3&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isInteger(&#39;12,3&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isInteger(&#39;a1b2c3&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isInteger(&#39; 123 &#39;) // false</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isnotblank" class="tsd-anchor"></a>
+					<h3>is<wbr>Not<wbr>Blank</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Not<wbr>Blank<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L57">utils/StringUtils/index.ts:57</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>Checks if a string is not <code>null</code>, <code>undefined</code>, <code>empty</code> or <code>whitespace</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.1</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(null) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(undefined) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(&#39;&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(&#39;   &#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(&#39;a&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().isNotBlank(&#39;   a   &#39;) // true</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="isnotempty" class="tsd-anchor"></a>
+					<h3>is<wbr>Not<wbr>Empty</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Not<wbr>Empty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L101">utils/StringUtils/index.ts:101</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>description</dt>
+							<dd><p>Checks if a string is not <code>null</code>, <code>undefined</code> or <code>empty</code></p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.1</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(null) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(undefined) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(&#39;&#39;) // false</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(&#39;   &#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(&#39;a&#39;) // true</p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>isNotEmpty(&#39;   a   &#39;) // true</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="removenonnumeric" class="tsd-anchor"></a>
+					<h3>remove<wbr>Non<wbr>Numeric</h3>
+					<div class="tsd-signature tsd-kind-icon">remove<wbr>Non<wbr>Numeric<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/606fe70/src/utils/StringUtils/index.ts#L145">utils/StringUtils/index.ts:145</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Removes all non-numeric caracteres from string.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>param</dt>
+							<dd><p>String to be processed</p>
+							</dd>
+							<dt>returns</dt>
+							<dd><p><code>string</code> without any non-numeric caracteres</p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v0.0.5</p>
+							</dd>
+							<dt>author</dt>
+							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
+							</dd>
+							<dt>example</dt>
+							<dd><p>new StringUtils().removeNonNumeric(&#39;a1b2c3&#39;) // &#39;123&#39;</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-class">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="brazilianutils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="formatutils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="randomutils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="stringutils.html" class="tsd-kind-icon">String<wbr>Utils</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="stringutils.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#hideemail" class="tsd-kind-icon">hide<wbr>Email</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isblank" class="tsd-kind-icon">is<wbr>Blank</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isdouble" class="tsd-kind-icon">is<wbr>Double</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isinteger" class="tsd-kind-icon">is<wbr>Integer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isnotblank" class="tsd-kind-icon">is<wbr>Not<wbr>Blank</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#isnotempty" class="tsd-kind-icon">is<wbr>Not<wbr>Empty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="stringutils.html#removenonnumeric" class="tsd-kind-icon">remove<wbr>Non<wbr>Numeric</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

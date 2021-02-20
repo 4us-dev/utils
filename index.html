@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @4us-dev/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +50,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>@4us-dev/utils</h1>
 		</div>
 	</div>
@@ -82,7 +76,8 @@
 					<img src="https://img.shields.io/bundlephobia/min/@4us-dev/utils" alt="size">
 				<a href="/LICENSE"><img src="https://img.shields.io/npm/l/@angular/cli.svg" alt="license"></a></p>
 				<p>Install with <a href="https://www.npmjs.com/">npm</a></p>
-				<pre><code class="language-sh">npm i @4us-dev/utils</code></pre>
+				<pre><code class="language-sh"><span style="color: #000000">npm i @4us-dev/utils</span>
+</code></pre>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
@@ -110,9 +105,11 @@
 							<li><a href="#onlyintegers">onlyIntegers</a></li>
 						</ul>
 					</li>
-					<li><a href="#validatorutils">ValidatorUtils</a><ul>
-							<li><a href="#validatorCPF">validatorCPF</a></li>
-							<li><a href="#validatorCNPJ">validatorCNPJ</a></li>
+					<li><a href="#validatorutils">BrazilianUtils</a><ul>
+							<li><a href="#isCPF">isCPF</a></li>
+							<li><a href="#isCNPJ">isCNPJ</a></li>
+							<li><a href="#generateCPF">generateCPF</a></li>
+							<li><a href="#generateCNPJ">generateCNPJ</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -128,22 +125,24 @@
 				</a>
 				<p>isBlank return true if value is null, undefined, empty or string with only white spaces.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isBlank(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isBlank</span><span style="color: #000000">(</span><span style="color: #0000FF">null</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isBlank</span><span style="color: #000000">(</span><span style="color: #0000FF">undefined</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isBlank</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isBlank</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;  &#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isBlank</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+</code></pre>
 				<p><code>new StringUtils().isNotBlank(value)</code> is equal to <code>!new StringUtils().isBlank(value)</code></p>
 				<a href="#isempty-and-isnotempty" id="isempty-and-isnotempty" style="color: inherit; text-decoration: none;">
 					<h3><code>isEmpty</code> and <code>isNotEmpty</code></h3>
 				</a>
 				<p>isEmpty return true if value is null, undefined, or empty.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-literal">null</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;&#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;  &#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isEmpty(<span class="hljs-string">&#x27;a&#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isEmpty</span><span style="color: #000000">(</span><span style="color: #0000FF">null</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isEmpty</span><span style="color: #000000">(</span><span style="color: #0000FF">undefined</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isEmpty</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isEmpty</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;  &#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isEmpty</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+</code></pre>
 				<p><code>new StringUtils().isNotEmpty(value)</code> is equal to <code>!new StringUtils().isEmpty(value)</code></p>
 				<a href="#hideemail" id="hideemail" style="color: inherit; text-decoration: none;">
 					<h3><code>hideEmail</code></h3>
@@ -152,44 +151,50 @@
 				You could hide the start and/or the end of email.</p>
 				<p>Examples:</p>
 				<p>Default configuration</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano@gmail.com`</span>); <span class="hljs-comment">// `f...@gmail.com`</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #A31515">`fulano@gmail.com`</span><span style="color: #000000">); </span><span style="color: #008000">// `f...@gmail.com`</span>
+</code></pre>
 				<p>How ofuscate the ends of the email too</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano@gmail.com`</span>, {
-  <span class="hljs-attr">hideStart</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true</span>
-  <span class="hljs-attr">hideEnd</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default false</span>
-}); <span class="hljs-comment">// `f...@gma...`</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #A31515">`fulano@gmail.com`</span><span style="color: #000000">, {</span>
+<span style="color: #000000">  </span><span style="color: #001080">hideStart:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #008000">// default true</span>
+<span style="color: #000000">  </span><span style="color: #001080">hideEnd:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #008000">// default false</span>
+<span style="color: #000000">}); </span><span style="color: #008000">// `f...@gma...`</span>
+</code></pre>
 				<p>If the <code>email</code> informed does not contains <code>@</code> or is <code>null</code> or <code>undefined</code>
 				the return of the method will be <code>undefined</code></p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">`fulano.com`</span>); <span class="hljs-comment">// undefined</span>
-<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">``</span>); <span class="hljs-comment">// undefined</span>
-<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-string">``</span>); <span class="hljs-comment">// undefined</span>
-<span class="hljs-keyword">new</span> StringUtils().hideEmail(<span class="hljs-literal">null</span>); <span class="hljs-comment">// undefined</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #A31515">`fulano.com`</span><span style="color: #000000">); </span><span style="color: #008000">// undefined</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #A31515">``</span><span style="color: #000000">); </span><span style="color: #008000">// undefined</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #A31515">``</span><span style="color: #000000">); </span><span style="color: #008000">// undefined</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">hideEmail</span><span style="color: #000000">(</span><span style="color: #0000FF">null</span><span style="color: #000000">); </span><span style="color: #008000">// undefined</span>
+</code></pre>
 				<a href="#removenonnumeric" id="removenonnumeric" style="color: inherit; text-decoration: none;">
 					<h3><code>removeNonNumeric</code></h3>
 				</a>
 				<p>Removes all non-numeric caracteres from string.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().removeNonNumeric(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">removeNonNumeric</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a1b2c3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &#039;123&#039;</span>
+</code></pre>
 				<a href="#isinteger" id="isinteger" style="color: inherit; text-decoration: none;">
 					<h3><code>isInteger</code></h3>
 				</a>
 				<p>Returns true if the value contains only numeric values</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;123&#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;12.3&#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;12,3&#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isInteger(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isInteger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;123&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isInteger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;12.3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isInteger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;12,3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isInteger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a1b2c3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isInteger</span><span style="color: #000000">(</span><span style="color: #A31515">&#039; 123 &#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+</code></pre>
 				<a href="#isdouble" id="isdouble" style="color: inherit; text-decoration: none;">
 					<h3><code>isDouble</code></h3>
 				</a>
 				<p>Returns true if the value into string is a double</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;123&#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;12.3&#x27;</span>); <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;12,3&#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">new</span> StringUtils().isDouble(<span class="hljs-string">&#x27; 123 &#x27;</span>); <span class="hljs-comment">// false</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isDouble</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;123&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isDouble</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;12.3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isDouble</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;12,3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isDouble</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a1b2c3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">StringUtils</span><span style="color: #000000">().</span><span style="color: #795E26">isDouble</span><span style="color: #000000">(</span><span style="color: #A31515">&#039; 123 &#039;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+</code></pre>
 				<a href="#randomutils" id="randomutils" style="color: inherit; text-decoration: none;">
 					<h2>RandomUtils</h2>
 				</a>
@@ -198,38 +203,41 @@
 				</a>
 				<p>Generates a random integer between the <code>min</code> and <code>max</code> inclusive.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-comment">// the return a integer between 0 and 100 inclusive</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().getRandomInteger();
+				<pre><code class="language-js"><span style="color: #008000">// the return a integer between 0 and 100 inclusive</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">getRandomInteger</span><span style="color: #000000">();</span>
 
-<span class="hljs-comment">// the return can be one of this values 0, 1, 2 or 3</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().getRandomInteger({ <span class="hljs-attr">min</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">max</span>: <span class="hljs-number">3</span> });</code></pre>
+<span style="color: #008000">// the return can be one of this values 0, 1, 2 or 3</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">getRandomInteger</span><span style="color: #000000">({ </span><span style="color: #001080">min:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #001080">max:</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> });</span>
+</code></pre>
 				<a href="#nextstring" id="nextstring" style="color: inherit; text-decoration: none;">
 					<h3><code>nextString</code></h3>
 				</a>
 				<p>Generates a random string.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 16</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString();
+				<pre><code class="language-js"><span style="color: #008000">// returns a random string with length 16</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">nextString</span><span style="color: #000000">();</span>
 
-<span class="hljs-comment">// returns a random string with length 8</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString({ <span class="hljs-attr">length</span>: <span class="hljs-number">8</span> });
+<span style="color: #008000">// returns a random string with length 8</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">nextString</span><span style="color: #000000">({ </span><span style="color: #001080">length:</span><span style="color: #000000"> </span><span style="color: #098658">8</span><span style="color: #000000"> });</span>
 
-<span class="hljs-comment">// returns a random string with length 8 only with letters upper, letters lower and numbers</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextString({
-  <span class="hljs-attr">length</span>: <span class="hljs-number">8</span>, <span class="hljs-comment">// default 16</span>
-  <span class="hljs-attr">upper</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: ABCDEF...</span>
-  <span class="hljs-attr">lower</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: abcdef...</span>
-  <span class="hljs-attr">numbers</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// default true ex: 012345...</span>
-  <span class="hljs-attr">specialSimple</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default true ex: !#$%&amp;*_+=-^~?;:.,|</span>
-  <span class="hljs-attr">specialAmbiguous</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// default true ex: &quot;()\&#x27;`´{[]}/&gt;&lt;</span>
-});</code></pre>
+<span style="color: #008000">// returns a random string with length 8 only with letters upper, letters lower and numbers</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">nextString</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">length:</span><span style="color: #000000"> </span><span style="color: #098658">8</span><span style="color: #000000">, </span><span style="color: #008000">// default 16</span>
+<span style="color: #000000">  </span><span style="color: #001080">upper:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #008000">// default true ex: ABCDEF...</span>
+<span style="color: #000000">  </span><span style="color: #001080">lower:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #008000">// default true ex: abcdef...</span>
+<span style="color: #000000">  </span><span style="color: #001080">numbers:</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">, </span><span style="color: #008000">// default true ex: 012345...</span>
+<span style="color: #000000">  </span><span style="color: #001080">specialSimple:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000">, </span><span style="color: #008000">// default true ex: !#$%&amp;*_+=-^~?;:.,|</span>
+<span style="color: #000000">  </span><span style="color: #001080">specialAmbiguous:</span><span style="color: #000000"> </span><span style="color: #0000FF">false</span><span style="color: #000000">, </span><span style="color: #008000">// default true ex: &quot;()\&#039;`´{[]}/&gt;&lt;</span>
+<span style="color: #000000">});</span>
+</code></pre>
 				<a href="#nextstringcustom" id="nextstringcustom" style="color: inherit; text-decoration: none;">
 					<h3><code>nextStringCustom</code></h3>
 				</a>
 				<p>Generates a random string with <code>length</code> informed and using <code>caracteresAllowed</code> variable as reference.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-comment">// returns a random string with length 10 using only `A`, `1` or `c` to generate the result</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> RandomUtils().nextStringCustom(<span class="hljs-number">10</span>, <span class="hljs-string">&#x27;A1c&#x27;</span>);</code></pre>
+				<pre><code class="language-js"><span style="color: #008000">// returns a random string with length 10 using only `A`, `1` or `c` to generate the result</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">RandomUtils</span><span style="color: #000000">().</span><span style="color: #795E26">nextStringCustom</span><span style="color: #000000">(</span><span style="color: #098658">10</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;A1c&#039;</span><span style="color: #000000">);</span>
+</code></pre>
 				<a href="#formatutils" id="formatutils" style="color: inherit; text-decoration: none;">
 					<h2>FormatUtils</h2>
 				</a>
@@ -238,166 +246,146 @@
 				</a>
 				<p>Removes all non-numeric values and apply the CPF mask.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;66273306010&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCPF</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;66273306010&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;662.733.060-10&quot;</span>
+</code></pre>
 				<p>This should format the CPF partially like this</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;6627330&#x27;</span>); <span class="hljs-comment">// &quot;662.733.0&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCPF</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;6627330&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;662.733.0&quot;</span>
+</code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCPF(<span class="hljs-string">&#x27;66A27B33C060D10&#x27;</span>); <span class="hljs-comment">// &quot;662.733.060-10&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCPF</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;66A27B33C060D10&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;662.733.060-10&quot;</span>
+</code></pre>
 				<a href="#formatcnpj" id="formatcnpj" style="color: inherit; text-decoration: none;">
 					<h3><code>formatCNPJ</code></h3>
 				</a>
 				<p>Removes all non-numeric values and apply the CNPJ mask.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;94338204000180&#x27;</span>); <span class="hljs-comment">// &quot;94.338.204/0001-80&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCNPJ</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;94338204000180&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;94.338.204/0001-80&quot;</span>
+</code></pre>
 				<p>This should format the CNPJ partially like this</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;9433820&#x27;</span>); <span class="hljs-comment">// &quot;94.338.20&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCNPJ</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;9433820&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;94.338.20&quot;</span>
+</code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatCNPJ(<span class="hljs-string">&#x27;943A382B04000C180&#x27;</span>); <span class="hljs-comment">// &quot;94.338.204/0001-80&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatCNPJ</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;943A382B04000C180&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;94.338.204/0001-80&quot;</span>
+</code></pre>
 				<a href="#formatphone" id="formatphone" style="color: inherit; text-decoration: none;">
 					<h3><code>formatPhone</code></h3>
 				</a>
 				<p>Removes all non-numeric values and apply the phone mask (99)9999-9999 or (99)99999-9999.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;85999432345&#x27;</span>); <span class="hljs-comment">// &quot;(85)99943-2345&quot;</span>
-<span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;8599943234&#x27;</span>); <span class="hljs-comment">// &quot;(85)9994-3234&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;85999432345&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;(85)99943-2345&quot;</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;8599943234&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;(85)9994-3234&quot;</span>
+</code></pre>
 				<p>This should format the phone partially like this</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;8599943&#x27;</span>); <span class="hljs-comment">// &quot;(85)9994-3&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;8599943&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;(85)9994-3&quot;</span>
+</code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;A8B5C9D9f9g4h3i23s4w5q&#x27;</span>); <span class="hljs-comment">// &quot;(85)99943-2345&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;A8B5C9D9f9g4h3i23s4w5q&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;(85)99943-2345&quot;</span>
+</code></pre>
 				<a href="#formatcep" id="formatcep" style="color: inherit; text-decoration: none;">
 					<h3><code>formatCEP</code></h3>
 				</a>
 				<p>Removes all non-numeric values and apply the CEP mask 99999-999</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;60601023&#x27;</span>); <span class="hljs-comment">// &quot;60601-023&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;60601023&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;60601-023&quot;</span>
+</code></pre>
 				<p>This should format the cep partially like this</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;606010&#x27;</span>); <span class="hljs-comment">// &quot;60601-0&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;606010&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;60601-0&quot;</span>
+</code></pre>
 				<p>If the value contains non-numeric characters they will be removed in formatting</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatPhone(<span class="hljs-string">&#x27;A60b601c02D3E&#x27;</span>); <span class="hljs-comment">// &quot;60601-023&quot;</span></code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatPhone</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;A60b601c02D3E&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &quot;60601-023&quot;</span>
+</code></pre>
 				<a href="#formatonlyintegers" id="formatonlyintegers" style="color: inherit; text-decoration: none;">
 					<h3><code>formatOnlyIntegers</code></h3>
 				</a>
 				<p>Removes all non-numeric caracteres from string.</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> value = <span class="hljs-keyword">new</span> FormatUtils().formatOnlyIntegers(<span class="hljs-string">&#x27;a1b2c3&#x27;</span>); <span class="hljs-comment">// &#x27;123&#x27;060-10&quot;</span></code></pre>
-				<a href="#validatorutils" id="validatorutils" style="color: inherit; text-decoration: none;">
-					<h2>ValidatorUtils</h2>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">value</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FormatUtils</span><span style="color: #000000">().</span><span style="color: #795E26">formatOnlyIntegers</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a1b2c3&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// &#039;123&#039;060-10&quot;</span>
+</code></pre>
+				<a href="#brazilianutils" id="brazilianutils" style="color: inherit; text-decoration: none;">
+					<h2>BrazilianUtils</h2>
 				</a>
 				<a href="#iscpf" id="iscpf" style="color: inherit; text-decoration: none;">
 					<h3><code>isCPF</code></h3>
 				</a>
 				<p>Return true when CPF is valid</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> validatorUtils = <span class="hljs-keyword">new</span> ValidatorUtils();</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCPF(<span class="hljs-string">&#x27;66273306010&#x27;</span>)) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is valid&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is not valid&#x27;</span>);
-}</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">brazilianUtils</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BrazilianUtils</span><span style="color: #000000">();</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isCPF</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;66273306010&#039;</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CPF is valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CPF is not valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				<p>or</p>
-				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCPF(<span class="hljs-string">&#x27;662.733.060-10&#x27;</span>)) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is valid&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CPF is not valid&#x27;</span>);
-}</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isCPF</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;662.733.060-10&#039;</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CPF is valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CPF is not valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				<a href="#iscnpj" id="iscnpj" style="color: inherit; text-decoration: none;">
 					<h3><code>isCNPJ</code></h3>
 				</a>
 				<p>Return true when CNPJ is valid</p>
 				<p>Examples:</p>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> validatorUtils = <span class="hljs-keyword">new</span> ValidatorUtils();</code></pre>
-				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCNPJ(<span class="hljs-string">&#x27;94338204000180&#x27;</span>)) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is valid&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is not valid&#x27;</span>);
-}</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">brazilianUtils</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BrazilianUtils</span><span style="color: #000000">();</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isCNPJ</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;94338204000180&#039;</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CNPJ is valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CNPJ is not valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+</code></pre>
 				<p>or</p>
-				<pre><code class="language-js"><span class="hljs-keyword">if</span> (validatorUtils.isCNPJ(<span class="hljs-string">&#x27;94.338.204/0001-80&#x27;</span>)) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is valid&#x27;</span>);
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;CNPJ is not valid&#x27;</span>);
-}</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">isCNPJ</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;94.338.204/0001-80&#039;</span><span style="color: #000000">)) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CNPJ is valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">else</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;CNPJ is not valid&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<a href="#generatecpf" id="generatecpf" style="color: inherit; text-decoration: none;">
+					<h3><code>generateCPF</code></h3>
+				</a>
+				<p>Return a valid CPF</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">brazilianUtils</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BrazilianUtils</span><span style="color: #000000">();</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cpf</span><span style="color: #000000"> = </span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">generateCPF</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#generatecnpj" id="generatecnpj" style="color: inherit; text-decoration: none;">
+					<h3><code>generateCNPJ</code></h3>
+				</a>
+				<p>Return a valid CNPJ</p>
+				<p>Examples:</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">brazilianUtils</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">BrazilianUtils</span><span style="color: #000000">();</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cpf</span><span style="color: #000000"> = </span><span style="color: #001080">brazilianUtils</span><span style="color: #000000">.</span><span style="color: #795E26">generateCNPJ</span><span style="color: #000000">();</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_formatcep_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCEP&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_formatcnpj_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCNPJ&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_formatcpf_.html">&quot;utils/<wbr>Format<wbr>Utils/formatCPF&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_formatonlyintegers_.html">&quot;utils/<wbr>Format<wbr>Utils/format<wbr>Only<wbr>Integers&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_formatphone_.html">&quot;utils/<wbr>Format<wbr>Utils/format<wbr>Phone&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_formatutils_index_.html">&quot;utils/<wbr>Format<wbr>Utils/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_randomutils_index_.html">&quot;utils/<wbr>Random<wbr>Utils/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_randomutils_nextint_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>Int&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_randomutils_nextstring_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>String&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_randomutils_nextstringcustom_.html">&quot;utils/<wbr>Random<wbr>Utils/next<wbr>String<wbr>Custom&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_hideemail_.html">&quot;utils/<wbr>String<wbr>Utils/hide<wbr>Email&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_index_.html">&quot;utils/<wbr>String<wbr>Utils/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isblank_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Blank&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isdouble_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Double&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isempty_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Empty&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isinteger_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Integer&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isnotblank_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Not<wbr>Blank&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_isnotempty_.html">&quot;utils/<wbr>String<wbr>Utils/is<wbr>Not<wbr>Empty&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_stringutils_removenonnumeric_.html">&quot;utils/<wbr>String<wbr>Utils/remove<wbr>Non<wbr>Numeric&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_validatorutils_index_.html">&quot;utils/<wbr>Validator<wbr>Utils/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_validatorutils_iscnpj_.html">&quot;utils/<wbr>Validator<wbr>Utils/isCNPJ&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_utils_validatorutils_iscpf_.html">&quot;utils/<wbr>Validator<wbr>Utils/isCPF&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/brazilianutils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/formatutils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/randomutils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/stringutils.html" class="tsd-kind-icon">String<wbr>Utils</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -408,13 +396,8 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
