@@ -4,13 +4,13 @@
 
 ### Fix
 
-- Exporting ValidatorUtils
+- Exporting BrazilianUtils
 
 ## [0.0.9](https://github.com/4us-dev/4us-utils/compare/v0.0.8...v0.0.9) (2020-10-05)
 
 ### Features
 
-- ValidatorUtils
+- BrazilianUtils
 
   - isCPF
   - isCNPJ

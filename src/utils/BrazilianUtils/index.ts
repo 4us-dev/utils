@@ -2,11 +2,11 @@ import isCNPJ from './isCNPJ';
 import isCPF from './isCPF';
 
 /**
- * ValidatorUtils
+ * BrazilianUtils
  * @since v0.0.9
  * @author Clairton luz <clairton.c.l@gmail.com>
  */
-export default class ValidatorUtils {
+export default class BrazilianUtils {
   /**
    * Check if is CPF is valid
    *
@@ -14,14 +14,14 @@ export default class ValidatorUtils {
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
-   * const validatorUtils = new ValidatorUtils();
-   * if(validatorUtils.isCPF("66273306010")){
+   * const brazilianUtils = new BrazilianUtils();
+   * if(brazilianUtils.isCPF("66273306010")){
    *    console.log('CPF is valid');
    * } else {
    *    console.log('CPF is not valid');
    * }
    *
-   * if(validatorUtils.isCPF("662.733.060-10")){
+   * if(brazilianUtils.isCPF("662.733.060-10")){
    *    console.log('CPF is valid');
    * } else {
    *    console.log('CPF is not valid');
@@ -35,17 +35,17 @@ export default class ValidatorUtils {
    * @author Clairton luz <clairton.c.l@gmail.com>
    *
    * @example
-   * const validatorUtils = new ValidatorUtils();
+   * const brazilianUtils = new BrazilianUtils();
    *
    * @example
-   * if(validatorUtils.isCNPJ("94338204000180")){
+   * if(brazilianUtils.isCNPJ("94338204000180")){
    *    console.log('CPF is valid');
    * } else {
    *    console.log('CPF is not valid');
    * }
    *
    * @example
-   * if(validatorUtils.isCNPJ("94.338.204/0001-80")){
+   * if(brazilianUtils.isCNPJ("94.338.204/0001-80")){
    *    console.log('CPF is valid');
    * } else {
    *    console.log('CPF is not valid');

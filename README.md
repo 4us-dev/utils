@@ -41,7 +41,7 @@ npm i @4us-dev/utils
   - [formatPhone](#formatphone)
   - [formatCEP](#formatCEP)
   - [onlyIntegers](#onlyintegers)
-- [ValidatorUtils](#validatorutils)
+- [BrazilianUtils](#validatorutils)
   - [validatorCPF](#validatorCPF)
   - [validatorCNPJ](#validatorCNPJ)
 
@@ -305,7 +305,7 @@ Examples:
 const value = new FormatUtils().formatOnlyIntegers('a1b2c3'); // '123'060-10"
 ```
 
-## ValidatorUtils
+## BrazilianUtils
 
 ### `isCPF`
 
@@ -314,11 +314,11 @@ Return true when CPF is valid
 Examples:
 
 ```js
-const validatorUtils = new ValidatorUtils();
+const brazilianUtils = new BrazilianUtils();
 ```
 
 ```js
-if (validatorUtils.isCPF('66273306010')) {
+if (brazilianUtils.isCPF('66273306010')) {
   console.log('CPF is valid');
 } else {
   console.log('CPF is not valid');
@@ -328,7 +328,7 @@ if (validatorUtils.isCPF('66273306010')) {
 or
 
 ```js
-if (validatorUtils.isCPF('662.733.060-10')) {
+if (brazilianUtils.isCPF('662.733.060-10')) {
   console.log('CPF is valid');
 } else {
   console.log('CPF is not valid');
@@ -342,11 +342,11 @@ Return true when CNPJ is valid
 Examples:
 
 ```js
-const validatorUtils = new ValidatorUtils();
+const brazilianUtils = new BrazilianUtils();
 ```
 
 ```js
-if (validatorUtils.isCNPJ('94338204000180')) {
+if (brazilianUtils.isCNPJ('94338204000180')) {
   console.log('CNPJ is valid');
 } else {
   console.log('CNPJ is not valid');
@@ -356,7 +356,7 @@ if (validatorUtils.isCNPJ('94338204000180')) {
 or
 
 ```js
-if (validatorUtils.isCNPJ('94.338.204/0001-80')) {
+if (brazilianUtils.isCNPJ('94.338.204/0001-80')) {
   console.log('CNPJ is valid');
 } else {
   console.log('CNPJ is not valid');
