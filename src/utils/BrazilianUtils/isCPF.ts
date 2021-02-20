@@ -1,7 +1,7 @@
 import isBlank from '../StringUtils/isBlank';
 
 const CPF_SIZE = 11;
-export default (cpf?: string | null): boolean => {
+const isCPF = (cpf?: string | null): boolean => {
   if (typeof cpf !== 'string') return false;
 
   cpf = cpf.replace(/[\s.-]*/gim, '');
@@ -42,3 +42,5 @@ export default (cpf?: string | null): boolean => {
   if (secondCheckDigit !== parseInt(cpf.substring(10, 11))) return false;
   return true;
 };
+
+export default isCPF;

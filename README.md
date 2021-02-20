@@ -42,8 +42,9 @@ npm i @4us-dev/utils
   - [formatCEP](#formatCEP)
   - [onlyIntegers](#onlyintegers)
 - [BrazilianUtils](#validatorutils)
-  - [validatorCPF](#validatorCPF)
-  - [validatorCNPJ](#validatorCNPJ)
+  - [isCPF](#isCPF)
+  - [isCNPJ](#isCNPJ)
+  - [generateCPF](#generateCPF)
 
 ## Introduction
 
@@ -361,4 +362,18 @@ if (brazilianUtils.isCNPJ('94.338.204/0001-80')) {
 } else {
   console.log('CNPJ is not valid');
 }
+```
+
+### `generateCPF`
+
+Return a valid CPF
+
+Examples:
+
+```js
+const brazilianUtils = new BrazilianUtils();
+```
+
+```js
+const cpf = brazilianUtils.generateCPF();
 ```

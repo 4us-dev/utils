@@ -1,16 +1,28 @@
 # What's news
 
+## [0.0.11](https://github.com/4us-dev/4us-utils/compare/v0.0.10...v0.0.11) (2021-02-20)
+
+### Features
+
+- BrazilianUtils
+
+  - generatorCPF
+
+### Break Changes
+
+- Renaming ValidatorUtils to BrazilianUtils
+
 ## [0.0.10](https://github.com/4us-dev/4us-utils/compare/v0.0.9...v0.0.10) (2020-10-06)
 
 ### Fix
 
-- Exporting BrazilianUtils
+- Exporting ValidatorUtils
 
 ## [0.0.9](https://github.com/4us-dev/4us-utils/compare/v0.0.8...v0.0.9) (2020-10-05)
 
 ### Features
 
-- BrazilianUtils
+- ValidatorUtils
 
   - isCPF
   - isCNPJ
