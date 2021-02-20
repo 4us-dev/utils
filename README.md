@@ -45,6 +45,7 @@ npm i @4us-dev/utils
   - [isCPF](#isCPF)
   - [isCNPJ](#isCNPJ)
   - [generateCPF](#generateCPF)
+  - [generateCNPJ](#generateCNPJ)
 
 ## Introduction
 
@@ -376,4 +377,18 @@ const brazilianUtils = new BrazilianUtils();
 
 ```js
 const cpf = brazilianUtils.generateCPF();
+```
+
+### `generateCNPJ`
+
+Return a valid CNPJ
+
+Examples:
+
+```js
+const brazilianUtils = new BrazilianUtils();
+```
+
+```js
+const cpf = brazilianUtils.generateCNPJ();
 ```

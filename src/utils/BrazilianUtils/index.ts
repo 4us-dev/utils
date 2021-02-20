@@ -1,3 +1,4 @@
+import generateCNPJ from './generateCNPJ';
 import generateCPF from './generateCPF';
 import isCNPJ from './isCNPJ';
 import isCPF from './isCPF';
@@ -54,7 +55,7 @@ export default class BrazilianUtils {
    */
   isCNPJ = isCNPJ;
   /**
-   * Check if is CPF is valid
+   * Generate a valid CPF
    *
    * @since v0.0.11
    * @author Clairton luz <clairton.c.l@gmail.com>
@@ -64,4 +65,15 @@ export default class BrazilianUtils {
    * const cpf = brazilianUtils.generateCPF();
    */
   generateCPF = generateCPF;
+  /**
+   * Generate a valid CNPJ
+   *
+   * @since v0.0.11
+   * @author Clairton luz <clairton.c.l@gmail.com>
+   *
+   * @example
+   * const brazilianUtils = new BrazilianUtils();
+   * const cnpj = brazilianUtils.generateCNPJ();
+   */
+  generateCNPJ = generateCNPJ;
 }

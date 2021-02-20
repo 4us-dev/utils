@@ -7,6 +7,7 @@
 - BrazilianUtils
 
   - generatorCPF
+  - generatorCNPJ
 
 ### Break Changes
 
