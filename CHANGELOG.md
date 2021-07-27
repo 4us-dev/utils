@@ -1,5 +1,11 @@
 # What's news
 
+## [0.0.12](https://github.com/4us-dev/4us-utils/compare/v0.0.11...v0.0.12) (2021-07-27)
+
+### Security
+
+- Update dependencies
+
 ## [0.0.11](https://github.com/4us-dev/4us-utils/compare/v0.0.10...v0.0.11) (2021-02-20)
 
 ### Features
