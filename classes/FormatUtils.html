@@ -55,7 +55,7 @@
 					<a href="../modules.html">@4us-dev/utils</a>
 				</li>
 				<li>
-					<a href="formatutils.html">FormatUtils</a>
+					<a href="FormatUtils.html">FormatUtils</a>
 				</li>
 			</ul>
 			<h1>Class FormatUtils</h1>
@@ -95,17 +95,17 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="formatutils.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="FormatUtils.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="formatutils.html#formatcep" class="tsd-kind-icon">formatCEP</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="formatutils.html#formatcnpj" class="tsd-kind-icon">formatCNPJ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="formatutils.html#formatcpf" class="tsd-kind-icon">formatCPF</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="formatutils.html#formatonlyintegers" class="tsd-kind-icon">format<wbr>Only<wbr>Integers</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="formatutils.html#formatphone" class="tsd-kind-icon">format<wbr>Phone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="FormatUtils.html#formatCEP" class="tsd-kind-icon">formatCEP</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="FormatUtils.html#formatCNPJ" class="tsd-kind-icon">formatCNPJ</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="FormatUtils.html#formatCPF" class="tsd-kind-icon">formatCPF</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="FormatUtils.html#formatOnlyIntegers" class="tsd-kind-icon">format<wbr>Only<wbr>Integers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="FormatUtils.html#formatPhone" class="tsd-kind-icon">format<wbr>Phone</a></li>
 							</ul>
 						</section>
 					</div>
@@ -117,13 +117,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Format<wbr>Utils<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="formatutils.html" class="tsd-signature-type" data-tsd-kind="Class">FormatUtils</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Format<wbr>Utils<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="FormatUtils.html" class="tsd-signature-type" data-tsd-kind="Class">FormatUtils</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="formatutils.html" class="tsd-signature-type" data-tsd-kind="Class">FormatUtils</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="FormatUtils.html" class="tsd-signature-type" data-tsd-kind="Class">FormatUtils</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -131,42 +131,14 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="formatcep" class="tsd-anchor"></a>
+					<a name="formatCEP" class="tsd-anchor"></a>
 					<h3>formatCEP</h3>
 					<div class="tsd-signature tsd-kind-icon">formatCEP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>cep<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/FormatUtils/index.ts#L72">utils/FormatUtils/index.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/FormatUtils/index.ts#L72">utils/FormatUtils/index.ts:72</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Removes all non-numeric values and apply the CEP mask 99999-999</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.6</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;60601023&quot;) // &quot;60601-023&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>This should format the cep partially like this</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;606010&quot;) // &quot;60601-0&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>If the value contains non-numeric characters they will be removed in formatting</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;A60b601c02D3E&quot;) // &quot;60601-023&quot;</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -176,6 +148,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Removes all non-numeric values and apply the CEP mask 99999-999</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -190,42 +167,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="formatcnpj" class="tsd-anchor"></a>
+					<a name="formatCNPJ" class="tsd-anchor"></a>
 					<h3>formatCNPJ</h3>
 					<div class="tsd-signature tsd-kind-icon">formatCNPJ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>cnpj<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/FormatUtils/index.ts#L52">utils/FormatUtils/index.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/FormatUtils/index.ts#L52">utils/FormatUtils/index.ts:52</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Removes all non-numeric values and apply the CNPJ mask.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.9</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCNPJ(&#39;94338204000180&#39;); // &quot;94.338.204/0001-80&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>This should format the CNPJ partially like this</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCNPJ(&quot;9433820&quot;) // &quot;94.338.20&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>If the value contains non-numeric characters they will be removed in formatting</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCNPJ(&quot;943A382B04000C180&quot;) // &quot;94.338.204/0001-80&quot;</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -235,6 +184,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Removes all non-numeric values and apply the CNPJ mask.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -249,42 +203,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="formatcpf" class="tsd-anchor"></a>
+					<a name="formatCPF" class="tsd-anchor"></a>
 					<h3>formatCPF</h3>
 					<div class="tsd-signature tsd-kind-icon">formatCPF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>cpf<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/FormatUtils/index.ts#L32">utils/FormatUtils/index.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/FormatUtils/index.ts#L32">utils/FormatUtils/index.ts:32</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Removes all non-numeric values and apply the CPF mask.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.5</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCPF(&quot;66273306010&quot;) // &quot;662.733.060-10&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>This should format the CPF partially like this</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCPF(&quot;6627330&quot;) // &quot;662.733.0&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>If the value contains non-numeric characters they will be removed in formatting</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatCPF(&quot;66A27B33C060D10&quot;) // &quot;662.733.060-10&quot;</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -294,6 +220,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Removes all non-numeric values and apply the CPF mask.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -308,36 +239,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="formatonlyintegers" class="tsd-anchor"></a>
+					<a name="formatOnlyIntegers" class="tsd-anchor"></a>
 					<h3>format<wbr>Only<wbr>Integers</h3>
 					<div class="tsd-signature tsd-kind-icon">format<wbr>Only<wbr>Integers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/FormatUtils/index.ts#L106">utils/FormatUtils/index.ts:106</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/FormatUtils/index.ts#L106">utils/FormatUtils/index.ts:106</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Removes all non-numeric caracteres from string.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>param</dt>
-							<dd><p>String to be processed</p>
-							</dd>
-							<dt>returns</dt>
-							<dd><p><code>string</code> without any non-numeric caracteres</p>
-							</dd>
-							<dt>since</dt>
-							<dd><p>v0.0.6</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>new FormatUtils().formatOnlyIntegers(&#39;a1b2c3&#39;) // &#39;123&#39;</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -347,13 +256,24 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Removes all non-numeric caracteres from string.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
 												<h5><span class="tsd-flag ts-flagOptional">Optional</span> value: <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<div class="lead">
+														<p>String to be processed</p>
+													</div>
+												</div>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+										<p><code>string</code> without any non-numeric caracteres</p>
 									</li>
 								</ul>
 							</li>
@@ -361,43 +281,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="formatphone" class="tsd-anchor"></a>
+					<a name="formatPhone" class="tsd-anchor"></a>
 					<h3>format<wbr>Phone</h3>
 					<div class="tsd-signature tsd-kind-icon">format<wbr>Phone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>phone<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/FormatUtils/index.ts#L93">utils/FormatUtils/index.ts:93</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/FormatUtils/index.ts#L93">utils/FormatUtils/index.ts:93</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Removes all non-numeric values and apply the phone mask (99)9999-9999 or (99)99999-9999.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.6</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;85999432345&quot;) // &quot;(85)99943-2345&quot;
-								const value = new FormatUtils().formatPhone(&quot;8599943234&quot;) // &quot;(85)9994-3234&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>This should format the phone partially like this</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;8599943&quot;) // &quot;(85)9994-3&quot;</p>
-							</dd>
-							<dt>description</dt>
-							<dd><p>If the value contains non-numeric characters they will be removed in formatting</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new FormatUtils().formatPhone(&quot;A8B5C9D9f9g4h3i23s4w5q&quot;) // &quot;(85)99943-2345&quot;</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -407,6 +298,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Removes all non-numeric values and apply the phone mask (99)9999-9999 or (99)99999-9999.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -433,40 +329,40 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="brazilianutils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
+						<a href="BrazilianUtils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="formatutils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
+						<a href="FormatUtils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="formatutils.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="FormatUtils.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="formatutils.html#formatcep" class="tsd-kind-icon">formatCEP</a>
+								<a href="FormatUtils.html#formatCEP" class="tsd-kind-icon">formatCEP</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="formatutils.html#formatcnpj" class="tsd-kind-icon">formatCNPJ</a>
+								<a href="FormatUtils.html#formatCNPJ" class="tsd-kind-icon">formatCNPJ</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="formatutils.html#formatcpf" class="tsd-kind-icon">formatCPF</a>
+								<a href="FormatUtils.html#formatCPF" class="tsd-kind-icon">formatCPF</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="formatutils.html#formatonlyintegers" class="tsd-kind-icon">format<wbr>Only<wbr>Integers</a>
+								<a href="FormatUtils.html#formatOnlyIntegers" class="tsd-kind-icon">format<wbr>Only<wbr>Integers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="formatutils.html#formatphone" class="tsd-kind-icon">format<wbr>Phone</a>
+								<a href="FormatUtils.html#formatPhone" class="tsd-kind-icon">format<wbr>Phone</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class">
-						<a href="randomutils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
+						<a href="RandomUtils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="stringutils.html" class="tsd-kind-icon">String<wbr>Utils</a>
+						<a href="StringUtils.html" class="tsd-kind-icon">String<wbr>Utils</a>
 					</li>
 				</ul>
 			</nav>

@@ -55,7 +55,7 @@
 					<a href="../modules.html">@4us-dev/utils</a>
 				</li>
 				<li>
-					<a href="randomutils.html">RandomUtils</a>
+					<a href="RandomUtils.html">RandomUtils</a>
 				</li>
 			</ul>
 			<h1>Class RandomUtils</h1>
@@ -95,15 +95,15 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="randomutils.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="RandomUtils.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="randomutils.html#nextint" class="tsd-kind-icon">next<wbr>Int</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="randomutils.html#nextstring" class="tsd-kind-icon">next<wbr>String</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="randomutils.html#nextstringcustom" class="tsd-kind-icon">next<wbr>String<wbr>Custom</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="RandomUtils.html#nextInt" class="tsd-kind-icon">next<wbr>Int</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="RandomUtils.html#nextString" class="tsd-kind-icon">next<wbr>String</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="RandomUtils.html#nextStringCustom" class="tsd-kind-icon">next<wbr>String<wbr>Custom</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,13 +115,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Random<wbr>Utils<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="randomutils.html" class="tsd-signature-type" data-tsd-kind="Class">RandomUtils</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Random<wbr>Utils<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="RandomUtils.html" class="tsd-signature-type" data-tsd-kind="Class">RandomUtils</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="randomutils.html" class="tsd-signature-type" data-tsd-kind="Class">RandomUtils</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="RandomUtils.html" class="tsd-signature-type" data-tsd-kind="Class">RandomUtils</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -129,35 +129,14 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="nextint" class="tsd-anchor"></a>
+					<a name="nextInt" class="tsd-anchor"></a>
 					<h3>next<wbr>Int</h3>
 					<div class="tsd-signature tsd-kind-icon">next<wbr>Int<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">MinMaxNumberConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/RandomUtils/index.ts#L24">utils/RandomUtils/index.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/RandomUtils/index.ts#L24">utils/RandomUtils/index.ts:24</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Generates a random integer between the <code>min</code> and <code>max</code> inclusive.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.2</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>// the return a integer between 0 and 100 inclusive
-								const value = getRandomInteger()</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>// the return can be one of this values 0, 1, 2 or 3
-								const value = getRandomInteger({min: 0, max:3})</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -167,6 +146,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Generates a random integer between the <code>min</code> and <code>max</code> inclusive.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -181,46 +165,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="nextstring" class="tsd-anchor"></a>
+					<a name="nextString" class="tsd-anchor"></a>
 					<h3>next<wbr>String</h3>
 					<div class="tsd-signature tsd-kind-icon">next<wbr>String<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">RandomStringConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/RandomUtils/index.ts#L49">utils/RandomUtils/index.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/RandomUtils/index.ts#L49">utils/RandomUtils/index.ts:49</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Generates a random string.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>description</dt>
-							<dd><p>How the string is generated can be configured</p>
-							</dd>
-							<dt>since</dt>
-							<dd><p>v0.0.3</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new RandomUtils().nextString() // returns a random string with length 16</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new RandomUtils().nextString({ length: 8 }) // returns a random string with length 8</p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new RandomUtils().nextString({
-									length: 8, // default 16
-									upper: true, // default true
-									lower: true, // default true
-									numbers: true, // default true
-									specialSimple: false, // default true
-									specialAmbiguous: false, // default true
-								}) // returns a random string with length 8 only with letters upper, letters lower and numbers</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -230,6 +182,11 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Generates a random string.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -244,31 +201,14 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="nextstringcustom" class="tsd-anchor"></a>
+					<a name="nextStringCustom" class="tsd-anchor"></a>
 					<h3>next<wbr>String<wbr>Custom</h3>
 					<div class="tsd-signature tsd-kind-icon">next<wbr>String<wbr>Custom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>length<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, caracteresAllowed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/b5e21cb/src/utils/RandomUtils/index.ts#L60">utils/RandomUtils/index.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/4us-dev/utils/blob/bec4819/src/utils/RandomUtils/index.ts#L60">utils/RandomUtils/index.ts:60</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Generates a random string with <code>length</code> informed and using <code>caracteresAllowed</code> variable
-							as reference.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v0.0.3</p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Clairton luz <a href="mailto:clairton.c.l@gmail.com">clairton.c.l@gmail.com</a></p>
-							</dd>
-							<dt>example</dt>
-							<dd><p>const value = new RandomUtils().nextStringCustom(10, &#39;A1c&#39;) // returns a random string with length 10 using only <code>A</code>, <code>1</code> or <code>c</code> to generate the result</p>
-							</dd>
-						</dl>
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
@@ -278,6 +218,12 @@
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Generates a random string with <code>length</code> informed and using <code>caracteresAllowed</code> variable
+												as reference.</p>
+											</div>
+										</div>
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
@@ -307,34 +253,34 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
-						<a href="brazilianutils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
+						<a href="BrazilianUtils.html" class="tsd-kind-icon">Brazilian<wbr>Utils</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="formatutils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
+						<a href="FormatUtils.html" class="tsd-kind-icon">Format<wbr>Utils</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="randomutils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
+						<a href="RandomUtils.html" class="tsd-kind-icon">Random<wbr>Utils</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="randomutils.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="RandomUtils.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="randomutils.html#nextint" class="tsd-kind-icon">next<wbr>Int</a>
+								<a href="RandomUtils.html#nextInt" class="tsd-kind-icon">next<wbr>Int</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="randomutils.html#nextstring" class="tsd-kind-icon">next<wbr>String</a>
+								<a href="RandomUtils.html#nextString" class="tsd-kind-icon">next<wbr>String</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="randomutils.html#nextstringcustom" class="tsd-kind-icon">next<wbr>String<wbr>Custom</a>
+								<a href="RandomUtils.html#nextStringCustom" class="tsd-kind-icon">next<wbr>String<wbr>Custom</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class">
-						<a href="stringutils.html" class="tsd-kind-icon">String<wbr>Utils</a>
+						<a href="StringUtils.html" class="tsd-kind-icon">String<wbr>Utils</a>
 					</li>
 				</ul>
 			</nav>
