@@ -1,12 +1,12 @@
 {
   "name": "@4us-dev/utils",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Utility classes to assist developers during software development",
   "author": "Clairton Luz <clairton.c.l@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/4us-dev/utils#readme",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && tsc",
     "docs": "typedoc --out docs src/index.ts",

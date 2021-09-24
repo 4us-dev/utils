@@ -1,9 +1,9 @@
-src
+# src
 *.log
 .prettierrc
 tsconfig.json
 .eslintrc.js
-jest.config.js
+jest.config.ts
 sonar-project.properties
 tsconfig.tsbuildinfo
 docs
